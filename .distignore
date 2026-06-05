@@ -1,0 +1,13 @@
+.git
+.github
+.wordpress-org
+node_modules
+tests
+phpcs.xml.dist
+composer.json
+composer.lock
+package.json
+package-lock.json
+webpack.config.js
+.DS_Store
+Thumbs.db
