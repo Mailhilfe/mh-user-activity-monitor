@@ -17,9 +17,41 @@ final class BotDetector {
     public function analyze(string $user_agent, string $raw_uri, int $hits): array {
         $ua = strtolower($user_agent);
         $rules = [
+            'KI-Assistent / Live-Abruf' => [
+                'chatgpt-user',
+                'claude-user',
+                'perplexity-user',
+                'mistralai-user',
+            ],
+            'KI-Suchmaschine' => [
+                'oai-searchbot',
+                'perplexitybot',
+                'youbot',
+                'applebot-extended',
+            ],
+            'KI-Training / Datensammlung' => [
+                'gptbot',
+                'claudebot',
+                'anthropic-ai',
+                'google-extended',
+                'meta-externalagent',
+                'meta-externalfetcher',
+                'amazonbot',
+                'ccbot',
+                'bytespider',
+                'cohere-ai',
+                'diffbot',
+            ],
+            'KI-Crawler' => [
+                'openai',
+                'anthropic',
+                'claude',
+                'perplexity',
+                'cohere',
+                'mistral',
+            ],
             'Suchmaschine' => ['googlebot','bingbot','duckduckbot','yandexbot','baiduspider','applebot','qwantbot'],
             'SEO-Tool' => ['ahrefsbot','semrushbot','sistrix','seobility','mj12bot','dotbot','siteauditbot'],
-            'KI-Crawler' => ['gptbot','chatgpt-user','claudebot','anthropic-ai','perplexitybot','ccbot','bytespider'],
             'Social Preview' => ['facebookexternalhit','twitterbot','linkedinbot','slackbot','discordbot','telegrambot','whatsapp'],
             'Monitoring' => ['uptimerobot','pingdom','statuscake','better uptime','newrelic'],
             'Scanner' => ['censys','shodan','nikto','acunetix','sqlmap','nuclei','nessus','masscan','zgrab','curl','python-requests','go-http-client','wget'],
@@ -89,7 +121,7 @@ final class BotDetector {
     private function risk(string $category, array $flags, int $hits): string {
         $s = $this->settings->get();
         if (!empty($flags) || $category === 'Scanner' || $hits >= (int)$s['bot_warning_threshold_red']) { return 'red'; }
-        if (in_array($category, ['SEO-Tool','KI-Crawler','Monitoring','Unbekannter Bot'], true) || $hits >= (int)$s['bot_warning_threshold_orange']) { return 'orange'; }
+        if (strpos($category, 'KI-') === 0 || in_array($category, ['SEO-Tool','Monitoring','Unbekannter Bot'], true) || $hits >= (int)$s['bot_warning_threshold_orange']) { return 'orange'; }
         if ($category !== '') { return 'yellow'; }
         return 'green';
     }

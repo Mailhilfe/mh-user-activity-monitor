@@ -4,93 +4,126 @@ Tags: users, activity, woocommerce, bots, monitoring
 Requires at least: 6.2
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.53
+Stable tag: 1.60
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-MH User Activity Monitor shows active visitors, bots and WooCommerce cart activity in the WordPress admin area.
+Live-Überwachung für WordPress, WooCommerce-Warenkörbe, Bots und verdächtige Zugriffe mit Datenschutzoptionen.
 
 == Description ==
 
-MH User Activity Monitor helps site owners monitor current user activity in the WordPress admin area. It displays logged-in users, WooCommerce customers, anonymous visitors and detected bots in a live overview.
+MH User Activity Monitor zeigt in Echtzeit, welche Benutzer, Besucher, WooCommerce-Kunden und Bots gerade auf Ihrer WordPress-Website aktiv sind. Das Plugin hilft Administratoren, ungewöhnliche Aktivitäten, Warenkorb-Sitzungen, Bot-Zugriffe und verdächtige Anfragen schneller zu erkennen – mit Datenschutzoptionen wie IP-Anonymisierung, Datensparmodus und automatischer Bereinigung.
 
-The plugin uses its own database table, a structured class-based architecture, external CSS and JavaScript files, scheduled cleanup tasks, configurable privacy options, improved bot detection and basic attack-pattern detection.
+= Live-Überwachung für WordPress-Websites =
 
-Main features include:
+MH User Activity Monitor zeigt aktive Sitzungen übersichtlich im WordPress-Adminbereich. Administratoren sehen, welche Besucher gerade online sind, ob angemeldete Benutzer aktiv sind, welche Seitentypen aufgerufen werden und wann die letzte Aktivität stattgefunden hat.
 
-* Live overview with dashboard cards and filters.
-* Active visitor table with status, visitor type, current page, referrer, IP display mode and user agent.
-* WooCommerce cart summary for active sessions when WooCommerce data is available, with configurable storage modes for item count, item count plus total, or product details.
-* Bot detection with categories and visual risk indicators.
-* Detection of common suspicious request patterns, such as XML-RPC, login probes, environment file probes and PHP wrapper probes.
-* Short page history per visitor.
-* Configurable IP anonymization, with anonymized IPs as the default for new installations.
-* Privacy modes: Standard, Data-saving and Strict.
-* Stored URLs and referrers are saved without query parameters. User-Agent, URL and referrer values are length-limited before storage.
-* Ignore lists for IP addresses, URLs and user agents, including support for exact IPs, IPv4 wildcards and IPv4/IPv6 CIDR ranges.
-* Configurable frontend ping interval.
-* Frontend ping can be disabled completely or restricted to WooCommerce pages.
-* Trusted proxy header support with server-side validation of allowed proxy IP rules.
-* Automatic cleanup through WordPress Cron.
-* Multilingual help page inside the plugin.
+Die Übersicht arbeitet mit Dashboard-Kacheln, Filtern, Sortierung und einer Live-Aktualisierung. So lässt sich schneller erkennen, ob auf der Website normaler Besucherverkehr stattfindet oder ob ungewöhnliche Muster auftreten.
 
-The plugin is intended for short-term operational monitoring. Site owners should review local privacy requirements before enabling features that display IP addresses, user agents, referrers, page history or WooCommerce cart information.
+= WooCommerce-Warenkörbe im Blick behalten =
+
+Wenn WooCommerce aktiv ist, kann das Plugin aktive Warenkorb-Sitzungen anzeigen. Je nach Einstellung werden nur die Artikelanzahl, Artikelanzahl und Summe oder Produktdetails gespeichert und angezeigt.
+
+Diese Funktion kann hilfreich sein, wenn Shop-Betreiber sehen möchten, ob Kunden gerade Produkte im Warenkorb haben, ob ein Warenkorb abbricht oder ob auffällige Sitzungen im Checkout-Bereich auftreten.
+
+= Bots und verdächtige Zugriffe erkennen =
+
+Das Plugin erkennt bekannte Bots, Crawler, SEO-Tools, KI-Crawler, Social-Media-Vorschauen und verdächtige Zugriffsmuster. Dazu gehören zum Beispiel Aufrufe auf Login-Bereiche, XML-RPC, .env-Dateien, .git-Verzeichnisse oder andere typische Scanner-Ziele.
+
+Die Bot- und Risikoanzeige ist keine Firewall und ersetzt kein Sicherheitsplugin. Sie hilft aber, auffällige Aktivitäten schneller sichtbar zu machen und technische Zugriffe besser einzuordnen.
+
+= Datenschutzfreundliche Einstellungen =
+
+Da das Plugin technische Besucherdaten verarbeitet, enthält es mehrere Datenschutzoptionen. Neue Installationen verwenden standardmäßig anonymisierte IP-Adressen. Zusätzlich stehen Datenschutzmodi wie Standard, Datensparsam und Streng zur Verfügung.
+
+Gespeicherte URLs und Referrer werden ohne Query-Parameter abgelegt, damit sensible Werte wie Token, E-Mail-Adressen, Suchbegriffe oder Trackingparameter nicht unnötig gespeichert werden. User-Agent, URL und Referrer werden außerdem begrenzt, um die gespeicherte Datenmenge zu reduzieren.
+
+Weitere Optionen sind automatische Bereinigung über WordPress-Cron, IP-Ignorierlisten, CIDR-Unterstützung, WooCommerce-Warenkorb-Modi und die Möglichkeit, den Frontend-Ping vollständig zu deaktivieren.
+
+= Für wen ist das Plugin geeignet? =
+
+Das Plugin eignet sich für Betreiber von WordPress-Websites, WooCommerce-Shops, Mitgliederbereichen, Buchungsseiten und redaktionellen Websites, die kurzfristig sehen möchten, was auf ihrer Website gerade passiert.
+
+Typische Einsatzfälle sind:
+
+* Shop-Betreiber möchten aktive Warenkörbe und Checkout-Sitzungen besser beobachten.
+* Administratoren möchten ungewöhnliche Bot-Zugriffe oder Scanner schneller erkennen.
+* Website-Betreiber möchten sehen, welche Seiten gerade aktiv besucht werden.
+* Support-Teams möchten technische Besucheraktivität kurzfristig nachvollziehen.
+* Betreiber kleinerer Websites möchten eine einfache Live-Übersicht ohne externe Trackingdienste.
+
+Das Plugin ist für kurzfristige technische Überwachung gedacht. Betreiber sollten prüfen, welche Daten sie wirklich benötigen, wie lange diese gespeichert werden und ob Hinweise in der Datenschutzerklärung erforderlich sind.
 
 == Requirements ==
 
-* WordPress 6.2 or newer.
-* PHP 7.4 or newer.
-* Tested up to WordPress 7.0.
-* WooCommerce is optional and only required for WooCommerce cart monitoring.
+* WordPress 6.2 oder neuer.
+* PHP 7.4 oder neuer.
+* Getestet bis WordPress 7.0.
+* WooCommerce ist optional und nur für die Warenkorbüberwachung erforderlich.
 
 == Installation ==
 
-1. Upload the plugin folder to the `/wp-content/plugins/` directory or install the ZIP file through the WordPress admin area.
-2. Activate the plugin through the Plugins screen in WordPress.
-3. Open `MH User Activity Monitor` in the WordPress admin menu.
-4. Review the settings before using the plugin on a production site.
-5. Configure IP anonymization, retention, ignore lists and WooCommerce-related options according to your privacy requirements.
+1. Laden Sie den Plugin-Ordner in das Verzeichnis `/wp-content/plugins/` hoch oder installieren Sie die ZIP-Datei über den WordPress-Adminbereich.
+2. Aktivieren Sie das Plugin über die Plugin-Verwaltung in WordPress.
+3. Öffnen Sie im WordPress-Adminbereich den Menüpunkt `MH User Activity Monitor`.
+4. Prüfen Sie vor dem Einsatz auf einer produktiven Website die Einstellungen.
+5. Konfigurieren Sie IP-Anonymisierung, Speicherzeit, Ignorierlisten und WooCommerce-Optionen passend zu Ihren Datenschutzanforderungen.
 
 == Frequently Asked Questions ==
 
-= Does the plugin store visitor data permanently? =
+= Speichert das Plugin Besucherdaten dauerhaft? =
 
-No. The plugin is designed for short-term activity monitoring. Cleanup is handled by WordPress Cron and retention-related settings.
+Nein. Das Plugin ist für kurzfristige Aktivitätsüberwachung gedacht. Die Bereinigung erfolgt über WordPress-Cron und die eingestellte Speicherzeit.
 
-= Does the plugin support WooCommerce? =
+= Unterstützt das Plugin WooCommerce? =
 
-Yes. If WooCommerce is active, the plugin can show cart information for active sessions when the WooCommerce session data is available.
+Ja. Wenn WooCommerce aktiv ist, kann das Plugin Warenkorbinformationen aktiver Sitzungen anzeigen, sofern die WooCommerce-Session verfügbar ist.
 
-= Can IP addresses be anonymized? =
+= Können IP-Adressen anonymisiert werden? =
 
-Yes. The settings page includes IP display and anonymization options. New installations use anonymized IPs by default. The Data-saving and Strict privacy modes force raw IP storage off.
+Ja. Das Plugin bietet mehrere IP-Modi. Neue Installationen verwenden standardmäßig anonymisierte IP-Adressen. In den Modi Datensparsam und Streng wird die Speicherung vollständiger IP-Adressen verhindert.
 
-= What does the privacy mode do? =
+= Was macht der Datenschutzmodus? =
 
-Standard uses the explicitly enabled tracking options but still removes query parameters from stored URLs and referrers. Data-saving stores IPs as hashes, removes stored user agents, stores referrers only as domains and reduces cart storage to item counts. Strict disables frontend ping effectively and does not store referrers, user agents, raw IPs or WooCommerce cart details.
+Standard nutzt die aktivierten Optionen, entfernt aber Query-Parameter aus gespeicherten URLs und Referrern. Datensparsam speichert IPs nur als Hash, entfernt gespeicherte User-Agents, speichert Referrer nur als Domain und reduziert Warenkorbdaten. Streng deaktiviert den Frontend-Ping effektiv und speichert keine Referrer, User-Agents, Roh-IPs oder WooCommerce-Warenkorbdetails.
 
-= Can bots be detected? =
+= Erkennt das Plugin Bots? =
 
-Yes. The plugin includes user-agent based bot detection and basic attack-pattern detection. It is not a firewall and should not replace a dedicated security plugin.
+Ja. Das Plugin enthält eine User-Agent-basierte Bot-Erkennung und eine einfache Erkennung auffälliger Zugriffsmuster. Es ist jedoch keine Firewall und ersetzt kein spezialisiertes Sicherheitsplugin.
 
+= Kann der Frontend-Ping deaktiviert werden? =
 
-= Can frontend AJAX pings be disabled? =
+Ja. In den Einstellungen kann der Frontend-Ping vollständig deaktiviert werden. Dann werden nur normale Seitenaufrufe erfasst und das regelmäßige Frontend-AJAX-Script wird nicht geladen.
 
-Yes. The settings page includes an option to disable frontend ping completely. In that mode, only normal page views are recorded and the regular frontend AJAX ping script is not loaded.
+= Welche IP-Regeln werden unterstützt? =
 
-= Which IP rule formats are supported? =
+Ignorierte IP-Adressen und erlaubte Proxy-IP-Adressen unterstützen einzelne IPs, IPv4-Wildcards wie `192.168.178.*` und IPv4-/IPv6-CIDR-Bereiche wie `10.0.0.0/8` oder `2001:db8::/32`.
 
-Ignored IP addresses and trusted proxy IP addresses support exact IP addresses, IPv4 wildcard rules such as `192.168.178.*`, and IPv4/IPv6 CIDR ranges such as `10.0.0.0/8` or `2001:db8::/32`.
+= Können WooCommerce-Warenkorbdaten reduziert werden? =
 
-= Can WooCommerce cart data be reduced? =
+Ja. Der Warenkorbmodus kann nur die Artikelanzahl, Artikelanzahl und Summe oder detaillierte Produktinformationen speichern. Der datensparsame Standard ist Artikelanzahl und Summe.
 
-Yes. The cart mode can store only the item count, item count plus total, or detailed product information. The data-minimizing default is item count plus total.
+= Ist das Plugin DSGVO-konform? =
 
-= Is the plugin GDPR compliant? =
-
-The plugin provides privacy-related settings, but compliance depends on the site configuration, legal basis, local privacy notices and operational use. Site owners should review their privacy policy and consult qualified advice when needed.
+Das Plugin stellt datenschutzfreundliche Einstellungen bereit. Die rechtliche Bewertung hängt jedoch von der konkreten Website-Konfiguration, dem Zweck der Verarbeitung, der Datenschutzerklärung und den lokalen Anforderungen ab. Betreiber sollten ihre Einstellungen prüfen und bei Bedarf fachkundigen Rat einholen.
 
 == Changelog ==
+
+= 1.60 =
+* Hardening: Improved validation of unexpected non-scalar settings values to prevent PHP deprecation notices.
+* Hardening: Made cart and page-history rendering more robust against malformed stored JSON data.
+
+= 1.57 =
+* Normalized multilingual help documentation so all included languages use the same section structure.
+
+= 1.56 =
+* Added localized description sections for all included languages.
+
+= 1.55 =
+* Verbesserte deutsche Plugin-Beschreibung für WordPress.org, inklusive Abschnitten zu Live-Überwachung, WooCommerce, Bots, Datenschutz und typischen Einsatzfällen.
+
+= 1.54 =
+* Updated the plugin description and multilingual help descriptions.
 
 = 1.53 =
 * Updated the WordPress tested-up-to metadata to 7.0 in the plugin header and readme.
@@ -105,14 +138,12 @@ The plugin provides privacy-related settings, but compliance depends on the site
 = 1.49 =
 * Improved admin display: WooCommerce cart cards, filters, columns, detail blocks and cart settings are hidden when WooCommerce is not installed or active.
 
-
 = 1.48 =
 * Fix: Hardened request, cookie and server value handling to avoid PHP 8.1+ deprecation notices when unexpected null values are present.
 
 = 1.42 =
 * Fix: Frontend AJAX pings are no longer classified as Adminbereich.
 * Fix: Frontend script now sends the public page type so the current page column shows the actual visitor context.
-
 
 = 1.41 =
 * Reworked remaining database calls to use wpdb::prepare() identifier placeholders (%i) instead of concatenated plugin table identifiers.
@@ -166,73 +197,3 @@ The plugin provides privacy-related settings, but compliance depends on the site
 * Security: Trusted proxy IP rules are validated server-side before proxy headers can be enabled.
 * Privacy: Added an option to completely disable frontend AJAX pings.
 * Performance: Admin live refresh now pauses while the browser tab is inactive.
-
-= 1.31 =
-* Security: Trusted proxy IPs now support exact IP addresses, wildcard IPv4 patterns and CIDR ranges for IPv4 and IPv6.
-* Privacy: The default IP mode for new installations is now anonymized.
-* Performance: Added pagination to the admin session table with 100 sessions per page.
-* Privacy: Added a WooCommerce cart storage mode for count-only, count-and-total, or detailed product storage.
-
-= 1.30 =
-* Fix: Verified and cleaned up the get_stats() SQL placeholder structure for reliable statistics queries.
-* Fix: The track_bots setting is now fully respected. When bot tracking is disabled, bot analysis and bot hit transients are skipped.
-* Privacy: Raw IP storage is now controlled only by the IP mode setting and no longer depends on the current admin user's display capability.
-* Reliability: Deactivation now uses wp_clear_scheduled_hook() to remove all scheduled cleanup events reliably.
-
-= 1.29 =
-* Performance: Removed synchronous random cleanup from session upserts. Cleanup and max-session enforcement now run through WP-Cron only.
-* Security: Proxy header support can no longer be enabled without trusted proxy IP addresses. The setting is rejected server-side and remains disabled until proxy IPs are configured.
-
-= 1.28 =
-* Security: Added admin warnings for proxy header configuration without trusted proxy IP addresses.
-* Security: Added an admin notice for HTTP installations where the session cookie cannot use the Secure flag.
-* Fix: Removed duplicate cron schedule registration.
-* Fix: Corrected max-session enforcement so identical timestamps do not remove too many sessions.
-* Cleanup: Removed an unused legacy cookie constant.
-* Performance: Added a short cache for statistics used by dashboard cards, the admin bar and live refresh.
-* Performance: Added a recommendation notice for persistent object cache on high-traffic installations.
-
-= 1.24 =
-* Fixed a missing settings fallback for the IP visibility option to avoid PHP warnings after updates.
-* Added translator comments for strings with placeholders.
-* Changed multiple placeholders to ordered placeholders.
-* Rewrote the readme description in standard English for WordPress.org scanning.
-
-= 1.22 =
-* Changed the text domain to match the plugin slug.
-* Removed development files from the WordPress.org release package.
-
-= 1.21 =
-* Removed the Plugin URI from the plugin header.
-
-= 1.20 =
-* Kept atomic tracking upserts without a session SELECT before writing.
-* Added configurable frontend ping interval and optional WooCommerce-only frontend pings.
-* Added a five-minute cleanup schedule and probabilistic cleanup after new inserts.
-* Added Log4Shell and PHP wrapper patterns to suspicious request detection.
-* Added the `mhuam_attack_checks` filter.
-* Improved status dots for screen readers.
-* Added an admin setting for deleting plugin data on uninstall.
-
-= 1.11 =
-* Added GPL license headers.
-* Added a full GPLv2 license file.
-* Added license notices for PHP, CSS and JavaScript files.
-
-= 1.10 =
-* Added an extended in-plugin help guide.
-* Updated guide texts for included plugin languages.
-* Added the `HelpDocs` class.
-
-= 1.8 =
-* Added database indexes for frequent queries.
-* Replaced JSON LIKE cart filtering with a dedicated cart count column.
-* Reduced large JSON fields in overview queries.
-* Added an upgrade lock for database migrations.
-
-= 1.7 =
-* Split code into separate classes and files.
-* Cached settings per request.
-* Combined statistics into one aggregate SQL query.
-* Moved cleanup and max-session handling to scheduled tasks.
-* Moved admin CSS, admin JavaScript and frontend JavaScript into separate files.

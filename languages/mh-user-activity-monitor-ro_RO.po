@@ -2,10 +2,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MH User Activity Monitor 1.53\n"
+"Project-Id-Version: MH User Activity Monitor 1.60\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2026-05-20 09:33+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2026-06-06 00:00+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ro_RO\n"
 "Language-Team: ro_RO <LL@li.org>\n"
@@ -538,3 +538,46 @@ msgstr "Overview"
 msgid "Übersicht öffnen"
 msgstr "Open overview"
 
+#: includes/Admin.php
+msgid "KI-Assistent / Live-Abruf"
+msgstr "Asistent AI / preluare live"
+
+#: includes/Admin.php
+msgid "KI-Suchmaschine"
+msgstr "Motor de căutare AI"
+
+#: includes/Admin.php
+msgid "KI-Training / Datensammlung"
+msgstr "Antrenare AI / colectare date"
+
+#: includes/Admin.php
+msgid "KI-Crawler"
+msgstr "Crawler AI"
+
+#: includes/Admin.php
+msgid "Suchmaschine"
+msgstr "Motor de căutare"
+
+#: includes/Admin.php
+msgid "SEO-Tool"
+msgstr "Instrument SEO"
+
+#: includes/Admin.php
+msgid "Social Preview"
+msgstr "Previzualizare socială"
+
+#: includes/Admin.php
+msgid "Monitoring"
+msgstr "Monitorizare"
+
+#: includes/Admin.php
+msgid "Scanner"
+msgstr "Scanner"
+
+#: includes/Admin.php
+msgid "Unbekannter Bot"
+msgstr "Bot necunoscut"
+
+#: includes/Admin.php
+msgid "Bot/Crawler"
+msgstr "Bot/Crawler"

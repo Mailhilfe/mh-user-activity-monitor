@@ -2,10 +2,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MH User Activity Monitor 1.53\n"
+"Project-Id-Version: MH User Activity Monitor 1.60\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2026-05-20 09:33+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2026-06-06 00:00+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ko_KR\n"
 "Language-Team: ko_KR <LL@li.org>\n"
@@ -540,3 +540,46 @@ msgstr "Overview"
 msgid "Übersicht öffnen"
 msgstr "Open overview"
 
+#: includes/Admin.php
+msgid "KI-Assistent / Live-Abruf"
+msgstr "AI 어시스턴트 / 실시간 가져오기"
+
+#: includes/Admin.php
+msgid "KI-Suchmaschine"
+msgstr "AI 검색 엔진"
+
+#: includes/Admin.php
+msgid "KI-Training / Datensammlung"
+msgstr "AI 학습 / 데이터 수집"
+
+#: includes/Admin.php
+msgid "KI-Crawler"
+msgstr "AI 크롤러"
+
+#: includes/Admin.php
+msgid "Suchmaschine"
+msgstr "검색 엔진"
+
+#: includes/Admin.php
+msgid "SEO-Tool"
+msgstr "SEO 도구"
+
+#: includes/Admin.php
+msgid "Social Preview"
+msgstr "소셜 미리보기"
+
+#: includes/Admin.php
+msgid "Monitoring"
+msgstr "모니터링"
+
+#: includes/Admin.php
+msgid "Scanner"
+msgstr "스캐너"
+
+#: includes/Admin.php
+msgid "Unbekannter Bot"
+msgstr "알 수 없는 봇"
+
+#: includes/Admin.php
+msgid "Bot/Crawler"
+msgstr "봇/크롤러"

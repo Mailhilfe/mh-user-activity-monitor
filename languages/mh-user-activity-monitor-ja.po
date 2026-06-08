@@ -2,10 +2,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MH User Activity Monitor 1.53\n"
+"Project-Id-Version: MH User Activity Monitor 1.60\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2026-05-20 09:33+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2026-06-06 00:00+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
 "Language-Team: ja <LL@li.org>\n"
@@ -541,3 +541,46 @@ msgstr "Overview"
 msgid "Übersicht öffnen"
 msgstr "Open overview"
 
+#: includes/Admin.php
+msgid "KI-Assistent / Live-Abruf"
+msgstr "AIアシスタント / ライブ取得"
+
+#: includes/Admin.php
+msgid "KI-Suchmaschine"
+msgstr "AI検索エンジン"
+
+#: includes/Admin.php
+msgid "KI-Training / Datensammlung"
+msgstr "AIトレーニング / データ収集"
+
+#: includes/Admin.php
+msgid "KI-Crawler"
+msgstr "AIクローラー"
+
+#: includes/Admin.php
+msgid "Suchmaschine"
+msgstr "検索エンジン"
+
+#: includes/Admin.php
+msgid "SEO-Tool"
+msgstr "SEOツール"
+
+#: includes/Admin.php
+msgid "Social Preview"
+msgstr "ソーシャルプレビュー"
+
+#: includes/Admin.php
+msgid "Monitoring"
+msgstr "監視"
+
+#: includes/Admin.php
+msgid "Scanner"
+msgstr "スキャナー"
+
+#: includes/Admin.php
+msgid "Unbekannter Bot"
+msgstr "不明なボット"
+
+#: includes/Admin.php
+msgid "Bot/Crawler"
+msgstr "ボット/クローラー"

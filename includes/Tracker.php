@@ -62,7 +62,7 @@ final class Tracker {
         if ($cookie_set) {
             $_COOKIE[$cookie_name] = $sid;
         }
-        if ($secure && !empty($_COOKIE[self::FALLBACK_COOKIE_NAME]) && !headers_sent()) {
+        if ($secure && $this->cookie_value(self::FALLBACK_COOKIE_NAME) !== '' && !headers_sent()) {
             setcookie(self::FALLBACK_COOKIE_NAME, '', time() - 3600, '/', '', false, true);
         }
     }
@@ -222,7 +222,8 @@ final class Tracker {
 
 
     private function is_trusted_proxy(string $remote_ip): bool {
-        $patterns = Settings::lines((string)$this->settings->get()['trusted_proxy_ips']);
+        $settings = $this->settings->get();
+        $patterns = Settings::lines($this->scalar_to_string($settings['trusted_proxy_ips'] ?? ''));
         if (empty($patterns)) {
             return false;
         }
@@ -259,21 +260,24 @@ final class Tracker {
     }
 
     private function is_ignored_ip(string $ip): bool {
-        foreach (Settings::lines((string)$this->settings->get()['ignored_ips']) as $pattern) {
+        $settings = $this->settings->get();
+        foreach (Settings::lines($this->scalar_to_string($settings['ignored_ips'] ?? '')) as $pattern) {
             if (Settings::ip_rule_match($pattern, $ip)) { return true; }
         }
         return false;
     }
 
     private function is_ignored_url(string $url): bool {
-        foreach (Settings::lines((string)$this->settings->get()['ignored_urls']) as $pattern) {
+        $settings = $this->settings->get();
+        foreach (Settings::lines($this->scalar_to_string($settings['ignored_urls'] ?? '')) as $pattern) {
             if (Settings::wildcard_match($pattern, $url)) { return true; }
         }
         return false;
     }
 
     private function is_ignored_user_agent(string $ua): bool {
-        foreach (Settings::lines((string)$this->settings->get()['ignored_user_agents']) as $pattern) {
+        $settings = $this->settings->get();
+        foreach (Settings::lines($this->scalar_to_string($settings['ignored_user_agents'] ?? '')) as $pattern) {
             if (Settings::wildcard_match($pattern, $ua)) { return true; }
         }
         return false;
@@ -486,12 +490,12 @@ final class Tracker {
         $history = [];
         foreach (array_slice($items, -10) as $item) {
             if (!is_array($item)) { continue; }
-            $url = $this->sanitize_url_for_storage((string)($item['url'] ?? ''), 'url');
+            $url = $this->sanitize_url_for_storage($this->scalar_to_string($item['url'] ?? ''), 'url');
             if ($url === '') { continue; }
             $history[] = [
-                'time' => $this->clamp((string)($item['time'] ?? gmdate('H:i:s', $fallback_ts)), 12),
+                'time' => $this->clamp($this->scalar_to_string($item['time'] ?? gmdate('H:i:s', $fallback_ts)), 12),
                 'url' => $url,
-                'type' => $this->clamp((string)($item['type'] ?? $fallback_type), 120),
+                'type' => $this->clamp($this->scalar_to_string($item['type'] ?? $fallback_type), 120),
             ];
         }
         if (empty($history)) {
@@ -510,7 +514,8 @@ final class Tracker {
     }
 
     private function privacy_mode(): string {
-        $mode = (string)($this->settings->get()['privacy_mode'] ?? 'standard');
+        $settings = $this->settings->get();
+        $mode = $this->scalar_to_string($settings['privacy_mode'] ?? 'standard');
         return in_array($mode, ['standard','data_saving','strict'], true) ? $mode : 'standard';
     }
 
@@ -518,7 +523,8 @@ final class Tracker {
         $mode = $this->privacy_mode();
         if ($mode === 'strict') { return 'hash'; }
         if ($mode === 'data_saving') { return 'hash'; }
-        $ip_mode = (string)($this->settings->get()['ip_mode'] ?? 'anonymized');
+        $settings = $this->settings->get();
+        $ip_mode = $this->scalar_to_string($settings['ip_mode'] ?? 'anonymized');
         return in_array($ip_mode, ['full','anonymized','hash'], true) ? $ip_mode : 'anonymized';
     }
 
@@ -541,7 +547,8 @@ final class Tracker {
         if ($this->privacy_mode() === 'strict') { return 'count'; }
         if ($this->privacy_mode() === 'data_saving') { return 'count'; }
 
-        $mode = (string)($this->settings->get()['cart_mode'] ?? 'details');
+        $settings = $this->settings->get();
+        $mode = $this->scalar_to_string($settings['cart_mode'] ?? 'details');
         if (!in_array($mode, ['count','summary','details'], true)) {
             $mode = 'details';
         }

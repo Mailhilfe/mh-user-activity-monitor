@@ -60,8 +60,25 @@ final class Settings {
 
     public function reset_cache(): void { $this->cachedSettings = null; }
 
+    /**
+     * Convert option values to safe scalar strings before using WordPress sanitizers.
+     * This prevents PHP 8.1+ deprecation notices if another plugin, direct database
+     * edit or malformed request provides null or array values in the settings array.
+     *
+     * @param mixed $value Raw option value.
+     */
+    private static function scalar_to_string($value): string {
+        if (is_string($value)) {
+            return $value;
+        }
+        if (is_int($value) || is_float($value) || is_bool($value)) {
+            return (string) $value;
+        }
+        return '';
+    }
+
     private static function bounded_int($value, int $min, int $max, int $default): int {
-        $value = absint($value);
+        $value = absint(self::scalar_to_string($value));
         if ($value <= 0 && $min > 0) {
             $value = $default;
         }
@@ -69,15 +86,12 @@ final class Settings {
     }
 
     private static function select_value($value, array $allowed, string $default): string {
-        $value = sanitize_key((string)$value);
+        $value = sanitize_key(self::scalar_to_string($value));
         return in_array($value, $allowed, true) ? $value : $default;
     }
 
     private static function limited_textarea($value, int $max_length): string {
-        if (!is_scalar($value)) {
-            $value = '';
-        }
-        $value = sanitize_textarea_field((string) $value);
+        $value = sanitize_textarea_field(self::scalar_to_string($value));
         return mb_substr($value, 0, $max_length);
     }
 
@@ -99,13 +113,13 @@ final class Settings {
         $out['privacy_mode'] = self::select_value($input['privacy_mode'] ?? $d['privacy_mode'], ['standard','data_saving','strict'], (string)$d['privacy_mode']);
         $out['ip_mode'] = self::select_value($input['ip_mode'] ?? $d['ip_mode'], ['full','anonymized','hash'], (string)$d['ip_mode']);
         $out['cart_mode'] = self::select_value($input['cart_mode'] ?? $d['cart_mode'], ['count','summary','details'], (string)$d['cart_mode']);
-        $show_ip_to = isset($input['show_ip_to']) ? (string) $input['show_ip_to'] : (string) $d['show_ip_to'];
+        $show_ip_to = isset($input['show_ip_to']) ? self::scalar_to_string($input['show_ip_to']) : (string) $d['show_ip_to'];
         $out['show_ip_to'] = self::select_value($show_ip_to, ['manage_options','list_users'], 'manage_options');
         foreach (['hide_admins','hide_own_ip','track_referrer','track_user_agent','track_cart','track_bots','hide_known_search_bots','track_page_history','privacy_help_enabled','trust_proxy_headers','frontend_ping_enabled','frontend_ping_woocommerce_only','delete_data_on_uninstall'] as $key) {
             $out[$key] = !empty($input[$key]) ? 1 : 0;
         }
         foreach (['ignored_ips','ignored_urls','ignored_user_agents','trusted_proxy_ips'] as $key) {
-            $out[$key] = self::limited_textarea((string)($input[$key] ?? ''), 5000);
+            $out[$key] = self::limited_textarea($input[$key] ?? '', 5000);
         }
         if (!empty($out['trust_proxy_headers'])) {
             if (trim((string)$out['trusted_proxy_ips']) === '') {
@@ -152,7 +166,7 @@ final class Settings {
 
     public function can_view(): bool { return current_user_can('manage_options') || current_user_can('list_users'); }
     public function can_manage(): bool { return current_user_can('manage_options'); }
-    public function can_view_ip(): bool { $s = $this->get(); $capability = isset($s['show_ip_to']) ? (string) $s['show_ip_to'] : 'manage_options'; return current_user_can($capability); }
+    public function can_view_ip(): bool { $s = $this->get(); $capability = isset($s['show_ip_to']) ? self::scalar_to_string($s['show_ip_to']) : 'manage_options'; return current_user_can($capability); }
 
     public static function lines(string $value): array {
         $items = preg_split('/\r\n|\r|\n/', $value);

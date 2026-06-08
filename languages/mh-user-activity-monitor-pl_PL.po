@@ -2,10 +2,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MH User Activity Monitor 1.53\n"
+"Project-Id-Version: MH User Activity Monitor 1.60\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2026-05-20 09:33+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2026-06-06 00:00+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: pl_PL\n"
 "Language-Team: pl_PL <LL@li.org>\n"
@@ -541,3 +541,46 @@ msgstr "Overview"
 msgid "Übersicht öffnen"
 msgstr "Open overview"
 
+#: includes/Admin.php
+msgid "KI-Assistent / Live-Abruf"
+msgstr "Asystent AI / pobieranie na żywo"
+
+#: includes/Admin.php
+msgid "KI-Suchmaschine"
+msgstr "Wyszukiwarka AI"
+
+#: includes/Admin.php
+msgid "KI-Training / Datensammlung"
+msgstr "Trening AI / zbieranie danych"
+
+#: includes/Admin.php
+msgid "KI-Crawler"
+msgstr "Crawler AI"
+
+#: includes/Admin.php
+msgid "Suchmaschine"
+msgstr "Wyszukiwarka"
+
+#: includes/Admin.php
+msgid "SEO-Tool"
+msgstr "Narzędzie SEO"
+
+#: includes/Admin.php
+msgid "Social Preview"
+msgstr "Podgląd społecznościowy"
+
+#: includes/Admin.php
+msgid "Monitoring"
+msgstr "Monitorowanie"
+
+#: includes/Admin.php
+msgid "Scanner"
+msgstr "Skaner"
+
+#: includes/Admin.php
+msgid "Unbekannter Bot"
+msgstr "Nieznany bot"
+
+#: includes/Admin.php
+msgid "Bot/Crawler"
+msgstr "Bot/Crawler"

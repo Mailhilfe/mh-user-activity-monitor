@@ -228,7 +228,7 @@ final class Admin {
         echo '<td><a class="button button-small" href="' . esc_url($detail_url) . '">' . esc_html__('Details', 'mh-user-activity-monitor') . '</a></td>';
         echo '<td><span class="mhuam-dot ' . ($online ? 'is-online' : 'is-offline') . '" aria-hidden="true"></span> ' . esc_html($online ? __('Online', 'mh-user-activity-monitor') : __('Offline', 'mh-user-activity-monitor')) . '</td>';
         echo '<td><strong>' . esc_html($row['display_name'] ?: $row['visitor_type']) . '</strong><br><span>' . esc_html($row['visitor_type']) . '</span>';
-        if (!empty($row['is_bot'])) { echo '<br><span class="mhuam-bot-label">BOT</span> ' . esc_html($row['bot_category'] . ($row['bot_name'] ? ': ' . $row['bot_name'] : '')); }
+        if (!empty($row['is_bot'])) { echo '<br><span class="mhuam-bot-label">BOT</span> ' . esc_html($this->format_bot_label($row)); }
         echo '</td>';
         echo '<td>' . esc_html($row['ip_display']) . '</td>';
         echo '<td><strong>' . esc_html($row['page_type']) . '</strong><br>' . wp_kses_post($this->url_link($row['current_url'])) . '</td>';
@@ -240,6 +240,50 @@ final class Admin {
         }
         echo '<td class="mhuam-ua">' . esc_html((string)$row['user_agent']) . '</td>';
         echo '</tr>';
+    }
+
+    private function format_bot_label(array $row): string {
+        $category = $this->translate_bot_category((string)($row['bot_category'] ?? ''));
+        $name = trim((string)($row['bot_name'] ?? ''));
+
+        if ($category === '' && $name === '') {
+            return '';
+        }
+
+        if ($category === '') {
+            return $name;
+        }
+
+        return $name !== '' ? $category . ': ' . $name : $category;
+    }
+
+    private function translate_bot_category(string $category): string {
+        switch ($category) {
+            case 'KI-Assistent / Live-Abruf':
+                return __('KI-Assistent / Live-Abruf', 'mh-user-activity-monitor');
+            case 'KI-Suchmaschine':
+                return __('KI-Suchmaschine', 'mh-user-activity-monitor');
+            case 'KI-Training / Datensammlung':
+                return __('KI-Training / Datensammlung', 'mh-user-activity-monitor');
+            case 'KI-Crawler':
+                return __('KI-Crawler', 'mh-user-activity-monitor');
+            case 'Suchmaschine':
+                return __('Suchmaschine', 'mh-user-activity-monitor');
+            case 'SEO-Tool':
+                return __('SEO-Tool', 'mh-user-activity-monitor');
+            case 'Social Preview':
+                return __('Social Preview', 'mh-user-activity-monitor');
+            case 'Monitoring':
+                return __('Monitoring', 'mh-user-activity-monitor');
+            case 'Scanner':
+                return __('Scanner', 'mh-user-activity-monitor');
+            case 'Unbekannter Bot':
+                return __('Unbekannter Bot', 'mh-user-activity-monitor');
+            case 'Bot/Crawler':
+                return __('Bot/Crawler', 'mh-user-activity-monitor');
+            default:
+                return $category;
+        }
     }
 
     private function render_detail(string $session_id): void {
@@ -257,7 +301,7 @@ final class Admin {
             __('Erste Aktivität', 'mh-user-activity-monitor') => get_date_from_gmt($row['first_seen'], 'd.m.Y H:i:s'),
             __('Letzte Aktivität', 'mh-user-activity-monitor') => get_date_from_gmt($row['last_seen'], 'd.m.Y H:i:s'),
             __('Aufrufe', 'mh-user-activity-monitor') => $row['hits'],
-            __('Bot', 'mh-user-activity-monitor') => !empty($row['is_bot']) ? trim($row['bot_category'] . ' ' . $row['bot_name']) : '—',
+            __('Bot', 'mh-user-activity-monitor') => !empty($row['is_bot']) ? $this->format_bot_label($row) : '—',
             __('User-Agent', 'mh-user-activity-monitor') => $row['user_agent'],
         ];
         foreach ($items as $label => $value) { echo '<div><strong>' . esc_html($label) . '</strong><p>' . esc_html((string)$value) . '</p></div>'; }
@@ -580,7 +624,24 @@ final class Admin {
     private function url_link($url): string { $url = (string)$url; if ($url === '') { return esc_html($this->dash()); } return '<a href="' . esc_url($url) . '" target="_blank" rel="noopener noreferrer nofollow">' . esc_html($this->short_url($url)) . '</a>'; }
     private function short_url(string $url): string { $path = wp_parse_url($url, PHP_URL_PATH); return mb_substr($path ?: $url, 0, 90); }
     private function history_summary($json): string { $h = json_decode((string)$json, true); if (!is_array($h) || empty($h)) { return ''; } return '<details><summary>' . esc_html__('Seitenverlauf', 'mh-user-activity-monitor') . '</summary>' . $this->history_list($json) . '</details>'; }
-    private function history_list($json): string { $h = json_decode((string)$json, true); if (!is_array($h) || empty($h)) { return '<p>' . esc_html($this->dash()) . '</p>'; } $out = '<ol class="mhuam-history">'; foreach (array_slice($h, -10) as $item) { $out .= '<li><strong>' . esc_html($item['time'] ?? '') . '</strong> ' . $this->url_link((string)($item['url'] ?? '')) . ' <em>' . esc_html($item['type'] ?? '') . '</em></li>'; } return $out . '</ol>'; }
+    private function history_list($json): string {
+        $history = json_decode((string) $json, true);
+        if (!is_array($history) || empty($history)) {
+            return '<p>' . esc_html($this->dash()) . '</p>';
+        }
+
+        $out = '<ol class="mhuam-history">';
+        foreach (array_slice($history, -10) as $item) {
+            if (!is_array($item)) {
+                continue;
+            }
+            $time = $this->scalar_to_string($item['time'] ?? '');
+            $url  = $this->scalar_to_string($item['url'] ?? '');
+            $type = $this->scalar_to_string($item['type'] ?? '');
+            $out .= '<li><strong>' . esc_html($time) . '</strong> ' . $this->url_link($url) . ' <em>' . esc_html($type) . '</em></li>';
+        }
+        return $out . '</ol>';
+    }
     private function cart_summary_from_count(int $count): string {
         if ($count <= 0) { return esc_html__('Leer / nicht verfügbar', 'mh-user-activity-monitor'); }
         // translators: %d: number of cart items.
@@ -615,12 +676,12 @@ final class Admin {
                 continue;
             }
 
-            $name = trim(wp_strip_all_tags((string)($item['name'] ?? '')));
+            $name = trim(wp_strip_all_tags($this->scalar_to_string($item['name'] ?? '')));
             if ($name === '') {
                 continue;
             }
 
-            $qty = max(0, (int)($item['qty'] ?? 0));
+            $qty = max(0, (int) $this->scalar_to_string($item['qty'] ?? 0));
             $names[] = ($qty > 1 ? $qty . ' × ' : '') . $name;
         }
 
@@ -655,17 +716,17 @@ final class Admin {
             if (!is_array($item)) {
                 continue;
             }
-            $qty = max(0, (int)($item['qty'] ?? 0));
-            $name = trim(wp_strip_all_tags((string)($item['name'] ?? '')));
+            $qty = max(0, (int) $this->scalar_to_string($item['qty'] ?? 0));
+            $name = trim(wp_strip_all_tags($this->scalar_to_string($item['name'] ?? '')));
             if ($name === '') {
                 continue;
             }
             $line = ($qty > 0 ? $qty . ' × ' : '') . $name;
-            $sku = trim(wp_strip_all_tags((string)($item['sku'] ?? '')));
+            $sku = trim(wp_strip_all_tags($this->scalar_to_string($item['sku'] ?? '')));
             if ($sku !== '') {
                 $line .= ' | SKU: ' . $sku;
             }
-            $line_total = trim(wp_strip_all_tags((string)($item['line_total'] ?? '')));
+            $line_total = trim(wp_strip_all_tags($this->scalar_to_string($item['line_total'] ?? '')));
             if ($line_total !== '') {
                 $line .= ' | ' . $line_total;
             }
@@ -676,14 +737,65 @@ final class Admin {
             $lines[] = '…';
         }
 
-        if (!empty($cart['total'])) {
-            $lines[] = __('Total', 'mh-user-activity-monitor') . ': ' . wp_strip_all_tags((string)$cart['total']);
+        $total = $this->scalar_to_string($cart['total'] ?? '');
+        if ($total !== '') {
+            $lines[] = __('Total', 'mh-user-activity-monitor') . ': ' . wp_strip_all_tags($total);
         }
 
-        return mb_substr(implode("
-", $lines), 0, 1000);
+        return mb_substr(implode("\n", $lines), 0, 1000);
     }
 
-    private function cart_summary($json): string { $c = json_decode((string)$json, true); if (!is_array($c) || !empty($c['empty'])) { return esc_html__('Leer / nicht verfügbar', 'mh-user-activity-monitor'); } $summary = (string)($c['count'] ?? 0) . ' Artikel'; if (!empty($c['total'])) { $summary .= ' | ' . (string)$c['total']; } return esc_html($summary); }
-    private function cart_detail($json): string { $c = json_decode((string)$json, true); if (!is_array($c) || !empty($c['empty'])) { return '<p>' . esc_html__('Leer / nicht verfügbar', 'mh-user-activity-monitor') . '</p>'; } $summary = (string)($c['count'] ?? 0) . ' Artikel'; if (!empty($c['total'])) { $summary .= ' | ' . (string)$c['total']; } $out = '<p><strong>' . esc_html($summary) . '</strong></p>'; $items = (array)($c['items'] ?? []); if (empty($items)) { return $out . '<p class="description">' . esc_html__('Produktdetails werden im aktuellen Warenkorb-Modus nicht gespeichert.', 'mh-user-activity-monitor') . '</p>'; } $out .= '<ul>'; foreach ($items as $i) { $out .= '<li>' . esc_html(($i['qty'] ?? 0) . ' × ' . ($i['name'] ?? '') . (($i['sku'] ?? '') ? ' | SKU: ' . $i['sku'] : '') . ' | ' . ($i['line_total'] ?? '')) . '</li>'; } return $out . '</ul>'; }
+    private function cart_summary($json): string {
+        $cart = json_decode((string) $json, true);
+        if (!is_array($cart) || !empty($cart['empty'])) {
+            return esc_html__('Leer / nicht verfügbar', 'mh-user-activity-monitor');
+        }
+        $count = max(0, (int) ($cart['count'] ?? 0));
+        $summary = $count . ' Artikel';
+        $total = $this->scalar_to_string($cart['total'] ?? '');
+        if ($total !== '') {
+            $summary .= ' | ' . $total;
+        }
+        return esc_html($summary);
+    }
+
+    private function cart_detail($json): string {
+        $cart = json_decode((string) $json, true);
+        if (!is_array($cart) || !empty($cart['empty'])) {
+            return '<p>' . esc_html__('Leer / nicht verfügbar', 'mh-user-activity-monitor') . '</p>';
+        }
+
+        $count = max(0, (int) ($cart['count'] ?? 0));
+        $summary = $count . ' Artikel';
+        $total = $this->scalar_to_string($cart['total'] ?? '');
+        if ($total !== '') {
+            $summary .= ' | ' . $total;
+        }
+        $out = '<p><strong>' . esc_html($summary) . '</strong></p>';
+
+        $items = isset($cart['items']) && is_array($cart['items']) ? $cart['items'] : [];
+        if (empty($items)) {
+            return $out . '<p class="description">' . esc_html__('Produktdetails werden im aktuellen Warenkorb-Modus nicht gespeichert.', 'mh-user-activity-monitor') . '</p>';
+        }
+
+        $out .= '<ul>';
+        foreach ($items as $item) {
+            if (!is_array($item)) {
+                continue;
+            }
+            $qty = max(0, (int) ($item['qty'] ?? 0));
+            $name = $this->scalar_to_string($item['name'] ?? '');
+            $sku = $this->scalar_to_string($item['sku'] ?? '');
+            $line_total = $this->scalar_to_string($item['line_total'] ?? '');
+            $line = $qty . ' × ' . $name;
+            if ($sku !== '') {
+                $line .= ' | SKU: ' . $sku;
+            }
+            if ($line_total !== '') {
+                $line .= ' | ' . $line_total;
+            }
+            $out .= '<li>' . esc_html($line) . '</li>';
+        }
+        return $out . '</ul>';
+    }
 }
