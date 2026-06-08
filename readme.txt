@@ -4,7 +4,7 @@ Tags: users, activity, woocommerce, bots, monitoring
 Requires at least: 6.2
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.60
+Stable tag: 1.62
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -107,7 +107,17 @@ Ja. Der Warenkorbmodus kann nur die Artikelanzahl, Artikelanzahl und Summe oder 
 
 Das Plugin stellt datenschutzfreundliche Einstellungen bereit. Die rechtliche Bewertung hängt jedoch von der konkreten Website-Konfiguration, dem Zweck der Verarbeitung, der Datenschutzerklärung und den lokalen Anforderungen ab. Betreiber sollten ihre Einstellungen prüfen und bei Bedarf fachkundigen Rat einholen.
 
+== Screenshots ==
+
+1. Live-Übersicht aktiver Besucher, Benutzer und Bots im WordPress-Adminbereich.
+2. Detailansicht einer aktiven Sitzung mit IP-Modus, User-Agent und Seitenverlauf.
+3. WooCommerce-Warenkorb-Übersicht mit aktiven Warenkorb-Sitzungen.
+4. Datenschutzeinstellungen mit IP-Anonymisierung, Speicherzeit und Datensparmodus.
+
 == Changelog ==
+
+= 1.62 =
+* Added WordPress.org screenshot assets and synchronized screenshot help documentation in all included languages.
 
 = 1.60 =
 * Hardening: Improved validation of unexpected non-scalar settings values to prevent PHP deprecation notices.

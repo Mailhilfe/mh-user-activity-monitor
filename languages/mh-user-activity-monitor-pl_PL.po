@@ -2,7 +2,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MH User Activity Monitor 1.60\n"
+"Project-Id-Version: MH User Activity Monitor 1.62\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2026-05-20 09:33+0000\n"
 "PO-Revision-Date: 2026-06-06 00:00+0000\n"
@@ -584,3 +584,20 @@ msgstr "Nieznany bot"
 #: includes/Admin.php
 msgid "Bot/Crawler"
 msgstr "Bot/Crawler"
+
+
+#: readme.txt
+msgid "Live-Übersicht aktiver Besucher, Benutzer und Bots im WordPress-Adminbereich."
+msgstr "Zrzut 1 pokazuje podgląd na żywo aktywnych odwiedzających, użytkowników i botów w panelu WordPress."
+
+#: readme.txt
+msgid "Detailansicht einer aktiven Sitzung mit IP-Modus, User-Agent und Seitenverlauf."
+msgstr "Zrzut 2 pokazuje szczegóły aktywnej sesji z trybem IP, user-agentem i historią stron."
+
+#: readme.txt
+msgid "WooCommerce-Warenkorb-Übersicht mit aktiven Warenkorb-Sitzungen."
+msgstr "Zrzut 3 pokazuje przegląd koszyków WooCommerce z aktywnymi sesjami koszyka."
+
+#: readme.txt
+msgid "Datenschutzeinstellungen mit IP-Anonymisierung, Speicherzeit und Datensparmodus."
+msgstr "Zrzut 4 pokazuje ustawienia prywatności z anonimizacją IP, czasem przechowywania i trybem oszczędzania danych."

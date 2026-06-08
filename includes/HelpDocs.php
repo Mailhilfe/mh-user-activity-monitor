@@ -87,6 +87,16 @@ final class HelpDocs {
         "Diese Funktionen reduzieren Last und gespeicherte Daten.",
         "Prüfen Sie die Einstellungen nach Updates, besonders bei WooCommerce und Proxy-Konfigurationen."
       ]
+    ],
+    [
+      "10. Screenshots auf WordPress.org",
+      "Die Screenshot-Dateien und die Screenshot-Beschreibungen sind aufeinander abgestimmt, damit WordPress.org den Screenshot-Bereich korrekt anzeigen kann.",
+      [
+        "Screenshot 1 zeigt die Live-Übersicht aktiver Besucher, Benutzer und Bots im WordPress-Adminbereich.",
+        "Screenshot 2 zeigt die Detailansicht einer aktiven Sitzung mit IP-Modus, User-Agent und Seitenverlauf.",
+        "Screenshot 3 zeigt die WooCommerce-Warenkorb-Übersicht mit aktiven Warenkorb-Sitzungen.",
+        "Screenshot 4 zeigt die Datenschutzeinstellungen mit IP-Anonymisierung, Speicherzeit und Datensparmodus."
+      ]
     ]
   ],
   "en_US": [
@@ -163,6 +173,16 @@ final class HelpDocs {
         "These features reduce load and stored data.",
         "Review the settings after updates, especially for WooCommerce and proxy configurations."
       ]
+    ],
+    [
+      "10. Screenshots on WordPress.org",
+      "The screenshot files and screenshot descriptions are aligned so WordPress.org can display the screenshot section correctly.",
+      [
+        "Screenshot 1 shows the live overview of active visitors, users and bots in the WordPress admin area.",
+        "Screenshot 2 shows the detail view of an active session with IP mode, user agent and page history.",
+        "Screenshot 3 shows the WooCommerce cart overview with active cart sessions.",
+        "Screenshot 4 shows the privacy settings with IP anonymization, retention time and data-saving mode."
+      ]
     ]
   ],
   "fr_FR": [
@@ -210,6 +230,16 @@ final class HelpDocs {
       "9. Nouvelles fonctions de confidentialité et de performance",
       "Les versions récentes réduisent la charge et les données stockées grâce à de nouveaux réglages.",
       []
+    ],
+    [
+      "10. Captures d’écran sur WordPress.org",
+      "Les fichiers de capture d’écran et leurs descriptions correspondent afin que WordPress.org puisse afficher correctement la section des captures d’écran.",
+      [
+        "La capture 1 affiche la vue en direct des visiteurs, utilisateurs et bots actifs dans l’administration WordPress.",
+        "La capture 2 affiche le détail d’une session active avec le mode IP, l’agent utilisateur et l’historique des pages.",
+        "La capture 3 affiche la vue des paniers WooCommerce avec les sessions de panier actives.",
+        "La capture 4 affiche les réglages de confidentialité avec anonymisation IP, durée de conservation et mode économie de données."
+      ]
     ]
   ],
   "es_ES": [
@@ -257,6 +287,16 @@ final class HelpDocs {
       "9. Nuevas funciones de privacidad y rendimiento",
       "Las versiones recientes reducen carga y datos almacenados mediante nuevas opciones.",
       []
+    ],
+    [
+      "10. Capturas en WordPress.org",
+      "Los archivos de captura y sus descripciones están alineados para que WordPress.org pueda mostrar correctamente la sección de capturas.",
+      [
+        "La captura 1 muestra la vista en directo de visitantes, usuarios y bots activos en el área de administración de WordPress.",
+        "La captura 2 muestra el detalle de una sesión activa con modo de IP, agente de usuario e historial de páginas.",
+        "La captura 3 muestra la vista de carritos de WooCommerce con sesiones de carrito activas.",
+        "La captura 4 muestra los ajustes de privacidad con anonimización de IP, tiempo de conservación y modo de ahorro de datos."
+      ]
     ]
   ],
   "it_IT": [
@@ -304,6 +344,16 @@ final class HelpDocs {
       "9. Nuove funzioni per privacy e prestazioni",
       "Le versioni recenti riducono carico e dati salvati con nuove impostazioni.",
       []
+    ],
+    [
+      "10. Screenshot su WordPress.org",
+      "I file degli screenshot e le relative descrizioni sono allineati affinché WordPress.org possa mostrare correttamente la sezione screenshot.",
+      [
+        "Lo screenshot 1 mostra la panoramica live di visitatori, utenti e bot attivi nell’area di amministrazione WordPress.",
+        "Lo screenshot 2 mostra il dettaglio di una sessione attiva con modalità IP, user agent e cronologia delle pagine.",
+        "Lo screenshot 3 mostra la panoramica dei carrelli WooCommerce con sessioni carrello attive.",
+        "Lo screenshot 4 mostra le impostazioni privacy con anonimizzazione IP, tempo di conservazione e modalità risparmio dati."
+      ]
     ]
   ],
   "nl_NL": [
@@ -351,6 +401,16 @@ final class HelpDocs {
       "9. Nieuwe privacy- en prestatiefuncties",
       "Recente versies verminderen belasting en opgeslagen gegevens met nieuwe instellingen.",
       []
+    ],
+    [
+      "10. Screenshots op WordPress.org",
+      "De screenshotbestanden en beschrijvingen zijn op elkaar afgestemd zodat WordPress.org de screenshotsectie correct kan tonen.",
+      [
+        "Screenshot 1 toont het live-overzicht van actieve bezoekers, gebruikers en bots in het WordPress-beheer.",
+        "Screenshot 2 toont de detailweergave van een actieve sessie met IP-modus, user-agent en paginageschiedenis.",
+        "Screenshot 3 toont het WooCommerce-winkelwagenoverzicht met actieve winkelwagensessies.",
+        "Screenshot 4 toont de privacy-instellingen met IP-anonimisering, bewaartijd en databesparende modus."
+      ]
     ]
   ],
   "pl_PL": [
@@ -398,6 +458,16 @@ final class HelpDocs {
       "9. Nowe funkcje prywatności i wydajności",
       "Nowe funkcje prywatności i wydajności.",
       []
+    ],
+    [
+      "10. Zrzuty ekranu w WordPress.org",
+      "Pliki zrzutów ekranu i ich opisy są dopasowane, aby WordPress.org mógł poprawnie wyświetlić sekcję zrzutów ekranu.",
+      [
+        "Zrzut 1 pokazuje podgląd na żywo aktywnych odwiedzających, użytkowników i botów w panelu WordPress.",
+        "Zrzut 2 pokazuje szczegóły aktywnej sesji z trybem IP, user-agentem i historią stron.",
+        "Zrzut 3 pokazuje przegląd koszyków WooCommerce z aktywnymi sesjami koszyka.",
+        "Zrzut 4 pokazuje ustawienia prywatności z anonimizacją IP, czasem przechowywania i trybem oszczędzania danych."
+      ]
     ]
   ],
   "pt_PT": [
@@ -445,6 +515,16 @@ final class HelpDocs {
       "9. Novas funções de privacidade e desempenho",
       "Novas funções de privacidade e desempenho.",
       []
+    ],
+    [
+      "10. Capturas no WordPress.org",
+      "Os ficheiros de captura e as respetivas descrições estão alinhados para que o WordPress.org apresente corretamente a secção de capturas.",
+      [
+        "A captura 1 mostra a visão em direto de visitantes, utilizadores e bots ativos na área de administração do WordPress.",
+        "A captura 2 mostra a vista detalhada de uma sessão ativa com modo de IP, agente do utilizador e histórico de páginas.",
+        "A captura 3 mostra a visão dos carrinhos WooCommerce com sessões de carrinho ativas.",
+        "A captura 4 mostra as definições de privacidade com anonimização de IP, tempo de retenção e modo de poupança de dados."
+      ]
     ]
   ],
   "pt_BR": [
@@ -492,6 +572,16 @@ final class HelpDocs {
       "9. Novos recursos de privacidade e desempenho",
       "Novos recursos de privacidade e desempenho.",
       []
+    ],
+    [
+      "10. Capturas no WordPress.org",
+      "Os arquivos de captura e suas descrições estão alinhados para que o WordPress.org exiba corretamente a seção de capturas.",
+      [
+        "A captura 1 mostra a visão ao vivo de visitantes, usuários e bots ativos na área administrativa do WordPress.",
+        "A captura 2 mostra a visualização detalhada de uma sessão ativa com modo de IP, agente de usuário e histórico de páginas.",
+        "A captura 3 mostra a visão geral dos carrinhos WooCommerce com sessões de carrinho ativas.",
+        "A captura 4 mostra as configurações de privacidade com anonimização de IP, tempo de retenção e modo de economia de dados."
+      ]
     ]
   ],
   "ru_RU": [
@@ -539,6 +629,16 @@ final class HelpDocs {
       "9. Новые функции конфиденциальности и производительности",
       "Новые функции конфиденциальности и производительности.",
       []
+    ],
+    [
+      "10. Скриншоты на WordPress.org",
+      "Файлы скриншотов и их описания согласованы, чтобы WordPress.org корректно отображал раздел скриншотов.",
+      [
+        "Скриншот 1 показывает живой обзор активных посетителей, пользователей и ботов в админке WordPress.",
+        "Скриншот 2 показывает подробности активной сессии с режимом IP, user-agent и историей страниц.",
+        "Скриншот 3 показывает обзор корзин WooCommerce с активными сессиями корзины.",
+        "Скриншот 4 показывает настройки конфиденциальности с анонимизацией IP, сроком хранения и режимом экономии данных."
+      ]
     ]
   ],
   "uk": [
@@ -586,6 +686,16 @@ final class HelpDocs {
       "9. Нові функції приватності та продуктивності",
       "Нові функції приватності та продуктивності.",
       []
+    ],
+    [
+      "10. Знімки екрана на WordPress.org",
+      "Файли знімків екрана та їхні описи узгоджені, щоб WordPress.org правильно відображав розділ знімків екрана.",
+      [
+        "Знімок 1 показує живий огляд активних відвідувачів, користувачів і ботів в адмінці WordPress.",
+        "Знімок 2 показує деталі активної сесії з режимом IP, user-agent і історією сторінок.",
+        "Знімок 3 показує огляд кошиків WooCommerce з активними сесіями кошика.",
+        "Знімок 4 показує налаштування приватності з анонімізацією IP, часом зберігання і режимом економії даних."
+      ]
     ]
   ],
   "tr_TR": [
@@ -633,6 +743,16 @@ final class HelpDocs {
       "9. Yeni gizlilik ve performans özellikleri",
       "Yeni gizlilik ve performans özellikleri.",
       []
+    ],
+    [
+      "10. WordPress.org ekran görüntüleri",
+      "Ekran görüntüsü dosyaları ve açıklamaları, WordPress.org ekran görüntüleri bölümünü doğru gösterecek şekilde eşleştirilmiştir.",
+      [
+        "Ekran görüntüsü 1, WordPress yönetim alanındaki aktif ziyaretçileri, kullanıcıları ve botları canlı olarak gösterir.",
+        "Ekran görüntüsü 2, IP modu, kullanıcı aracısı ve sayfa geçmişiyle aktif bir oturumun ayrıntılarını gösterir.",
+        "Ekran görüntüsü 3, aktif sepet oturumlarıyla WooCommerce sepet görünümünü gösterir.",
+        "Ekran görüntüsü 4, IP anonimleştirme, saklama süresi ve veri tasarrufu modu içeren gizlilik ayarlarını gösterir."
+      ]
     ]
   ],
   "ar": [
@@ -680,6 +800,16 @@ final class HelpDocs {
       "9. ميزات جديدة للخصوصية والأداء",
       "ميزات جديدة للخصوصية والأداء.",
       []
+    ],
+    [
+      "10. لقطات الشاشة على WordPress.org",
+      "تمت مطابقة ملفات لقطات الشاشة مع أوصافها حتى يتمكن WordPress.org من عرض قسم لقطات الشاشة بشكل صحيح.",
+      [
+        "تعرض اللقطة 1 النظرة الحية للزوار والمستخدمين والروبوتات النشطة في لوحة تحكم WordPress.",
+        "تعرض اللقطة 2 تفاصيل جلسة نشطة مع وضع عنوان IP ووكيل المستخدم وسجل الصفحات.",
+        "تعرض اللقطة 3 نظرة عامة على سلال WooCommerce مع جلسات سلة نشطة.",
+        "تعرض اللقطة 4 إعدادات الخصوصية مع إخفاء عنوان IP ومدة الاحتفاظ ووضع تقليل البيانات."
+      ]
     ]
   ],
   "zh_CN": [
@@ -727,6 +857,16 @@ final class HelpDocs {
       "9. 新的隐私和性能功能",
       "新的隐私和性能功能.",
       []
+    ],
+    [
+      "10. WordPress.org 上的截图",
+      "截图文件和截图说明已对应，以便 WordPress.org 正确显示截图区域。",
+      [
+        "截图 1 显示 WordPress 后台中活跃访客、用户和机器人的实时概览。",
+        "截图 2 显示带有 IP 模式、用户代理和页面历史的活跃会话详情。",
+        "截图 3 显示包含活跃购物车会话的 WooCommerce 购物车概览。",
+        "截图 4 显示包含 IP 匿名化、保留时间和节省数据模式的隐私设置。"
+      ]
     ]
   ],
   "ja": [
@@ -774,6 +914,16 @@ final class HelpDocs {
       "9. 新しいプライバシーとパフォーマンス機能",
       "新しいプライバシーとパフォーマンス機能.",
       []
+    ],
+    [
+      "10. WordPress.org のスクリーンショット",
+      "スクリーンショットファイルと説明を対応させ、WordPress.org がスクリーンショット欄を正しく表示できるようにしています。",
+      [
+        "スクリーンショット 1 は、WordPress 管理画面でアクティブな訪問者、ユーザー、ボットのライブ概要を表示します。",
+        "スクリーンショット 2 は、IP モード、ユーザーエージェント、ページ履歴を含むアクティブセッションの詳細を表示します。",
+        "スクリーンショット 3 は、アクティブなカートセッションを含む WooCommerce カート概要を表示します。",
+        "スクリーンショット 4 は、IP 匿名化、保存期間、データ節約モードを含むプライバシー設定を表示します。"
+      ]
     ]
   ],
   "ko_KR": [
@@ -821,6 +971,16 @@ final class HelpDocs {
       "9. 새로운 개인정보 보호 및 성능 기능",
       "새로운 개인정보 보호 및 성능 기능.",
       []
+    ],
+    [
+      "10. WordPress.org 스크린샷",
+      "스크린샷 파일과 설명을 맞추어 WordPress.org에서 스크린샷 섹션이 올바르게 표시되도록 했습니다.",
+      [
+        "스크린샷 1은 WordPress 관리자 영역에서 활성 방문자, 사용자 및 봇의 실시간 개요를 보여줍니다.",
+        "스크린샷 2는 IP 모드, 사용자 에이전트 및 페이지 기록이 포함된 활성 세션 상세 정보를 보여줍니다.",
+        "스크린샷 3은 활성 장바구니 세션이 있는 WooCommerce 장바구니 개요를 보여줍니다.",
+        "스크린샷 4는 IP 익명화, 보관 기간 및 데이터 절약 모드가 포함된 개인정보 설정을 보여줍니다."
+      ]
     ]
   ],
   "sv_SE": [
@@ -868,6 +1028,16 @@ final class HelpDocs {
       "9. Nya integritets- och prestandafunktioner",
       "Nya integritets- och prestandafunktioner.",
       []
+    ],
+    [
+      "10. Skärmbilder på WordPress.org",
+      "Skärmbildsfilerna och beskrivningarna matchar varandra så att WordPress.org kan visa skärmbildsavsnittet korrekt.",
+      [
+        "Skärmbild 1 visar liveöversikten över aktiva besökare, användare och botar i WordPress-admin.",
+        "Skärmbild 2 visar detaljvyn för en aktiv session med IP-läge, användaragent och sidhistorik.",
+        "Skärmbild 3 visar WooCommerce-varukorgsöversikten med aktiva varukorgssessioner.",
+        "Skärmbild 4 visar integritetsinställningar med IP-anonymisering, lagringstid och databesparingsläge."
+      ]
     ]
   ],
   "da_DK": [
@@ -915,6 +1085,16 @@ final class HelpDocs {
       "9. Nye privatlivs- og ydelsesfunktioner",
       "Nye privatlivs- og ydelsesfunktioner.",
       []
+    ],
+    [
+      "10. Skærmbilleder på WordPress.org",
+      "Skærmbilledfilerne og beskrivelserne passer sammen, så WordPress.org kan vise skærmbilledeafsnittet korrekt.",
+      [
+        "Skærmbillede 1 viser liveoversigten over aktive besøgende, brugere og bots i WordPress-administrationen.",
+        "Skærmbillede 2 viser detaljevisningen af en aktiv session med IP-tilstand, user-agent og sidehistorik.",
+        "Skærmbillede 3 viser WooCommerce-kurvoversigten med aktive kurvsessioner.",
+        "Skærmbillede 4 viser privatlivsindstillinger med IP-anonymisering, opbevaringstid og databesparende tilstand."
+      ]
     ]
   ],
   "cs_CZ": [
@@ -962,6 +1142,16 @@ final class HelpDocs {
       "9. Nové funkce soukromí a výkonu",
       "Nové funkce soukromí a výkonu.",
       []
+    ],
+    [
+      "10. Snímky obrazovky na WordPress.org",
+      "Soubory snímků obrazovky a jejich popisy jsou sladěny, aby WordPress.org správně zobrazil sekci snímků.",
+      [
+        "Snímek 1 zobrazuje živý přehled aktivních návštěvníků, uživatelů a botů v administraci WordPressu.",
+        "Snímek 2 zobrazuje detail aktivní relace s režimem IP, user-agentem a historií stránek.",
+        "Snímek 3 zobrazuje přehled košíků WooCommerce s aktivními relacemi košíku.",
+        "Snímek 4 zobrazuje nastavení soukromí s anonymizací IP, dobou uchování a úsporným režimem dat."
+      ]
     ]
   ],
   "hu_HU": [
@@ -1009,6 +1199,16 @@ final class HelpDocs {
       "9. Új adatvédelmi és teljesítményfunkciók",
       "Új adatvédelmi és teljesítményfunkciók.",
       []
+    ],
+    [
+      "10. Képernyőképek a WordPress.org oldalon",
+      "A képernyőkép-fájlok és leírásaik össze vannak hangolva, hogy a WordPress.org helyesen jelenítse meg a képernyőképek szakaszt.",
+      [
+        "Az 1. képernyőkép az aktív látogatók, felhasználók és botok élő áttekintését mutatja a WordPress adminban.",
+        "A 2. képernyőkép egy aktív munkamenet részleteit mutatja IP móddal, user-agenttel és oldalelőzményekkel.",
+        "A 3. képernyőkép a WooCommerce kosáráttekintést mutatja aktív kosár-munkamenetekkel.",
+        "A 4. képernyőkép az adatvédelmi beállításokat mutatja IP-anonimizálással, megőrzési idővel és adattakarékos móddal."
+      ]
     ]
   ],
   "ro_RO": [
@@ -1056,6 +1256,16 @@ final class HelpDocs {
       "9. Funcții noi de confidențialitate și performanță",
       "Funcții noi de confidențialitate și performanță.",
       []
+    ],
+    [
+      "10. Capturi de ecran pe WordPress.org",
+      "Fișierele capturilor de ecran și descrierile lor sunt aliniate astfel încât WordPress.org să afișeze corect secțiunea de capturi.",
+      [
+        "Captura 1 arată prezentarea live a vizitatorilor, utilizatorilor și boților activi în zona de administrare WordPress.",
+        "Captura 2 arată detaliile unei sesiuni active cu modul IP, user-agent și istoricul paginilor.",
+        "Captura 3 arată prezentarea coșurilor WooCommerce cu sesiuni active de coș.",
+        "Captura 4 arată setările de confidențialitate cu anonimizare IP, timp de păstrare și mod de economisire a datelor."
+      ]
     ]
   ]
 }
