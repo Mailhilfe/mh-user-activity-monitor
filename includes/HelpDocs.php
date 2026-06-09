@@ -42,6 +42,7 @@ final class HelpDocs {
       "4. Datenschutzfreundliche Einstellungen",
       "Das Plugin verarbeitet technische Besucherdaten nur kurzfristig und bietet Optionen wie IP-Anonymisierung, Datenschutzmodus, automatische Bereinigung, gekürzte User-Agents sowie URLs und Referrer ohne Query-Parameter.",
       [
+        "Der Modus „Keinen“ wendet keinen zusätzlichen Datenschutzmodus an und nutzt nur die einzeln aktivierten Einstellungen.",
         "Neue Installationen verwenden standardmäßig anonymisierte IP-Adressen.",
         "Die Modi Standard, Datensparsam und Streng steuern, wie viele technische Daten gespeichert werden.",
         "Der Frontend-Ping kann vollständig deaktiviert oder auf WooCommerce-Seiten begrenzt werden."
@@ -129,6 +130,7 @@ final class HelpDocs {
       "4. Privacy-friendly settings",
       "The plugin processes technical visitor data only temporarily and offers options such as IP anonymization, privacy mode, automatic cleanup, shortened user agents and URLs/referrers without query parameters.",
       [
+        "The None mode applies no additional privacy mode and uses only the individually enabled settings.",
         "New installations use anonymized IP addresses by default.",
         "Standard, Data-saving and Strict modes control how much technical data is stored.",
         "The frontend ping can be disabled completely or limited to WooCommerce pages."
@@ -221,7 +223,9 @@ final class HelpDocs {
     [
       "7. Confidentialité et sécurité",
       "Les données techniques doivent être visibles uniquement pour les personnes autorisées.",
-      []
+      [
+        "Le mode Aucun n’applique aucun mode de confidentialité supplémentaire et utilise uniquement les réglages activés individuellement."
+      ]
     ],
     [
       "8. Listes d’exclusion, maintenance et dépannage",
@@ -264,7 +268,9 @@ final class HelpDocs {
     [
       "4. Ajustes respetuosos con la privacidad",
       "Las opciones reducen los datos guardados mediante anonimización de IP, modo de privacidad y limpieza automática.",
-      []
+      [
+        "El modo Ninguno no aplica ningún modo de privacidad adicional y utiliza solo los ajustes activados individualmente."
+      ]
     ],
     [
       "5. ¿Para quién es adecuado el plugin?",
@@ -322,7 +328,9 @@ final class HelpDocs {
     [
       "4. Impostazioni attente alla privacy",
       "Le opzioni riducono i dati salvati tramite anonimizzazione IP, modalità privacy e pulizia automatica.",
-      []
+      [
+        "La modalità Nessuno non applica alcuna modalità privacy aggiuntiva e usa solo le impostazioni abilitate singolarmente."
+      ]
     ],
     [
       "5. Per chi è adatto il plugin?",
@@ -380,7 +388,9 @@ final class HelpDocs {
     [
       "4. Privacyvriendelijke instellingen",
       "Opties beperken opgeslagen gegevens met IP-anonimisering, privacymodus en automatische opschoning.",
-      []
+      [
+        "De modus Geen past geen extra privacymodus toe en gebruikt alleen de afzonderlijk ingeschakelde instellingen."
+      ]
     ],
     [
       "5. Voor wie is deze plugin geschikt?",
@@ -438,7 +448,9 @@ final class HelpDocs {
     [
       "4. Ustawienia przyjazne prywatności",
       "Ustawienia przyjazne prywatności.",
-      []
+      [
+        "Tryb Brak nie stosuje dodatkowego trybu prywatności i używa tylko indywidualnie włączonych ustawień."
+      ]
     ],
     [
       "5. Dla kogo jest ta wtyczka?",
@@ -496,7 +508,9 @@ final class HelpDocs {
     [
       "4. Definições amigas da privacidade",
       "Definições amigas da privacidade.",
-      []
+      [
+        "O modo Nenhum não aplica um modo de privacidade adicional e usa apenas as definições ativadas individualmente."
+      ]
     ],
     [
       "5. Para quem é este plugin?",
@@ -554,7 +568,9 @@ final class HelpDocs {
     [
       "4. Configurações favoráveis à privacidade",
       "Configurações favoráveis à privacidade.",
-      []
+      [
+        "O modo Nenhum não aplica um modo de privacidade adicional e usa apenas as configurações ativadas individualmente."
+      ]
     ],
     [
       "5. Para quem este plugin é indicado?",
@@ -612,7 +628,9 @@ final class HelpDocs {
     [
       "4. Настройки с учетом конфиденциальности",
       "Настройки с учетом конфиденциальности.",
-      []
+      [
+        "Режим «Нет» не применяет дополнительный режим конфиденциальности и использует только отдельно включённые настройки."
+      ]
     ],
     [
       "5. Для кого предназначен этот плагин?",
@@ -670,7 +688,9 @@ final class HelpDocs {
     [
       "4. Налаштування з урахуванням приватності",
       "Налаштування з урахуванням приватності.",
-      []
+      [
+        "Режим «Немає» не застосовує додатковий режим приватності й використовує лише окремо ввімкнені налаштування."
+      ]
     ],
     [
       "5. Для кого призначений цей плагін?",
@@ -728,7 +748,9 @@ final class HelpDocs {
     [
       "4. Gizlilik dostu ayarlar",
       "Gizlilik dostu ayarlar.",
-      []
+      [
+        "Yok modu ek bir gizlilik modu uygulamaz ve yalnızca ayrı ayrı etkinleştirilen ayarları kullanır."
+      ]
     ],
     [
       "5. Bu eklenti kimler için uygundur?",
@@ -786,7 +808,9 @@ final class HelpDocs {
     [
       "4. إعدادات تراعي الخصوصية",
       "إعدادات تراعي الخصوصية.",
-      []
+      [
+        "لا يطبق وضع \"لا شيء\" أي وضع خصوصية إضافي ويستخدم فقط الإعدادات المفعلة بشكل منفرد."
+      ]
     ],
     [
       "5. لمن تناسب هذه الإضافة؟",
@@ -844,7 +868,9 @@ final class HelpDocs {
     [
       "4. 注重隐私的设置",
       "注重隐私的设置.",
-      []
+      [
+        "“无”模式不会应用额外的隐私模式，只使用单独启用的设置。"
+      ]
     ],
     [
       "5. 这个插件适合谁？",
@@ -902,7 +928,9 @@ final class HelpDocs {
     [
       "4. プライバシーに配慮した設定",
       "プライバシーに配慮した設定.",
-      []
+      [
+        "「なし」モードは追加のプライバシーモードを適用せず、個別に有効化された設定のみを使用します。"
+      ]
     ],
     [
       "5. このプラグインに適しているサイト",
@@ -960,7 +988,9 @@ final class HelpDocs {
     [
       "4. 개인정보 보호 친화적 설정",
       "개인정보 보호 친화적 설정.",
-      []
+      [
+        "없음 모드는 추가 개인정보 보호 모드를 적용하지 않고 개별적으로 활성화된 설정만 사용합니다."
+      ]
     ],
     [
       "5. 이 플러그인이 적합한 경우",
@@ -1018,7 +1048,9 @@ final class HelpDocs {
     [
       "4. Integritetsvänliga inställningar",
       "Integritetsvänliga inställningar.",
-      []
+      [
+        "Läget Ingen tillämpar inget extra integritetsläge och använder endast de inställningar som aktiverats separat."
+      ]
     ],
     [
       "5. Vem passar tillägget för?",
@@ -1076,7 +1108,9 @@ final class HelpDocs {
     [
       "4. Privatlivsvenlige indstillinger",
       "Privatlivsvenlige indstillinger.",
-      []
+      [
+        "Tilstanden Ingen anvender ingen ekstra privatlivstilstand og bruger kun de individuelt aktiverede indstillinger."
+      ]
     ],
     [
       "5. Hvem er pluginet egnet til?",
@@ -1134,7 +1168,9 @@ final class HelpDocs {
     [
       "4. Nastavení šetrná k soukromí",
       "Nastavení šetrná k soukromí.",
-      []
+      [
+        "Režim Žádný nepoužívá žádný dodatečný režim soukromí a používá pouze jednotlivě zapnutá nastavení."
+      ]
     ],
     [
       "5. Pro koho je plugin vhodný?",
@@ -1192,7 +1228,9 @@ final class HelpDocs {
     [
       "4. Adatvédelembarát beállítások",
       "Adatvédelembarát beállítások.",
-      []
+      [
+        "A Nincs mód nem alkalmaz további adatvédelmi módot, csak az egyenként bekapcsolt beállításokat használja."
+      ]
     ],
     [
       "5. Kinek ajánlott ez a bővítmény?",
@@ -1250,7 +1288,9 @@ final class HelpDocs {
     [
       "4. Setări prietenoase cu confidențialitatea",
       "Setări prietenoase cu confidențialitatea.",
-      []
+      [
+        "Modul Niciunul nu aplică un mod suplimentar de confidențialitate și folosește doar setările activate individual."
+      ]
     ],
     [
       "5. Pentru cine este potrivit pluginul?",

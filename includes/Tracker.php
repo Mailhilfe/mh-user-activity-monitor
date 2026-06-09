@@ -307,9 +307,15 @@ final class Tracker {
         $host = isset($parts['host']) ? sanitize_text_field((string)$parts['host']) : '';
         $path = isset($parts['path']) ? '/' . ltrim(sanitize_text_field((string)$parts['path']), '/') : '/';
 
-        // Privacy hardening: query strings are never stored. They may contain tokens,
-        // email addresses, reset keys, coupon codes or other personal data.
         $rebuilt = $host !== '' ? $scheme . '://' . $host . $path : $path;
+
+        if ($this->privacy_mode() === 'none' && isset($parts['query'])) {
+            $query = sanitize_text_field((string)$parts['query']);
+            if ($query !== '') {
+                $rebuilt .= '?' . $query;
+            }
+        }
+
         $max = $type === 'referrer' ? self::MAX_REFERRER_LENGTH : self::MAX_URL_LENGTH;
         return $this->clamp($rebuilt, $max);
     }

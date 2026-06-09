@@ -4,7 +4,7 @@ Tags: users, activity, woocommerce, bots, monitoring
 Requires at least: 6.2
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.65
+Stable tag: 1.67
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -34,7 +34,7 @@ The bot and risk indicators are not a firewall and do not replace a dedicated se
 
 = Privacy-friendly settings =
 
-Because the plugin processes technical visitor data, it includes several privacy options. New installations use anonymized IP addresses by default. Additional privacy modes such as Standard, Data-saving and Strict are available.
+Because the plugin processes technical visitor data, it includes several privacy options. New installations use anonymized IP addresses by default. Additional privacy modes such as None, Standard, Data-saving and Strict are available.
 
 Stored URLs and referrers are saved without query parameters so sensitive values such as tokens, email addresses, search terms or tracking parameters are not stored unnecessarily. User-agent, URL and referrer values are also length-limited to reduce the amount of stored data.
 
@@ -89,7 +89,7 @@ Yes. The plugin provides multiple IP modes. New installations use anonymized IP 
 
 = What does the privacy mode do? =
 
-Standard uses the enabled options but removes query parameters from stored URLs and referrers. Data-saving stores IPs only as hashes, removes stored user agents, stores referrers only as domains and reduces cart data. Strict effectively disables the frontend ping and does not store referrers, user agents, raw IPs or WooCommerce cart details.
+None applies no additional privacy mode and uses only the individually enabled settings. Standard uses the enabled options but removes query parameters from stored URLs and referrers. Data-saving stores IPs only as hashes, removes stored user agents, stores referrers only as domains and reduces cart data. Strict effectively disables the frontend ping and does not store referrers, user agents, raw IPs or WooCommerce cart details.
 
 = Does the plugin detect bots? =
 
@@ -119,6 +119,12 @@ The plugin provides privacy-friendly settings. The legal assessment depends on t
 4. Privacy settings with IP anonymization, retention time and data-saving mode.
 
 == Changelog ==
+
+= 1.67 =
+* Linked visible IP addresses in the admin table and session detail view to ipinfo.io for easier lookup.
+
+= 1.66 =
+* Added a None privacy mode option for administrators who want no additional privacy-mode restrictions beyond the individual settings.
 
 = 1.65 =
 * Changed the readme.txt source language to English for better WordPress.org compatibility.

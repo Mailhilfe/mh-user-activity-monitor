@@ -21,7 +21,7 @@ final class Settings {
     public static function defaults(): array {
         return [
             'online_seconds' => 300,
-            'privacy_mode' => 'standard',
+            'privacy_mode' => 'none',
             'retention_seconds' => 900,
             'ip_mode' => 'anonymized',
             'show_ip_to' => 'manage_options',
@@ -110,7 +110,7 @@ final class Settings {
         $out = [];
         $out['online_seconds'] = self::bounded_int($input['online_seconds'] ?? $d['online_seconds'], 60, 3600, (int)$d['online_seconds']);
         $out['retention_seconds'] = self::bounded_int($input['retention_seconds'] ?? $d['retention_seconds'], $out['online_seconds'], 86400, (int)$d['retention_seconds']);
-        $out['privacy_mode'] = self::select_value($input['privacy_mode'] ?? $d['privacy_mode'], ['standard','data_saving','strict'], (string)$d['privacy_mode']);
+        $out['privacy_mode'] = self::select_value($input['privacy_mode'] ?? $d['privacy_mode'], ['none','standard','data_saving','strict'], (string)$d['privacy_mode']);
         $out['ip_mode'] = self::select_value($input['ip_mode'] ?? $d['ip_mode'], ['full','anonymized','hash'], (string)$d['ip_mode']);
         $out['cart_mode'] = self::select_value($input['cart_mode'] ?? $d['cart_mode'], ['count','summary','details'], (string)$d['cart_mode']);
         $show_ip_to = isset($input['show_ip_to']) ? self::scalar_to_string($input['show_ip_to']) : (string) $d['show_ip_to'];

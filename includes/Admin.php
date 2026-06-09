@@ -230,7 +230,7 @@ final class Admin {
         echo '<td><strong>' . esc_html($row['display_name'] ?: $row['visitor_type']) . '</strong><br><span>' . esc_html($row['visitor_type']) . '</span>';
         if (!empty($row['is_bot'])) { echo '<br><span class="mhuam-bot-label">BOT</span> ' . esc_html($this->format_bot_label($row)); }
         echo '</td>';
-        echo '<td>' . esc_html($row['ip_display']) . '</td>';
+        echo '<td>' . wp_kses_post($this->ipinfo_link($row['ip_display'])) . '</td>';
         echo '<td><strong>' . esc_html($row['page_type']) . '</strong><br>' . wp_kses_post($this->url_link($row['current_url'])) . '</td>';
         echo '<td>' . esc_html((string)$row['hits']) . '</td>';
         echo '<td>' . wp_kses_post($this->format_time_short((string)$row['last_seen'], (int)$row['last_seen_ts'])) . '</td>';
@@ -304,7 +304,15 @@ final class Admin {
             __('Bot', 'mh-user-activity-monitor') => !empty($row['is_bot']) ? $this->format_bot_label($row) : '—',
             __('User-Agent', 'mh-user-activity-monitor') => $row['user_agent'],
         ];
-        foreach ($items as $label => $value) { echo '<div><strong>' . esc_html($label) . '</strong><p>' . esc_html((string)$value) . '</p></div>'; }
+        foreach ($items as $label => $value) {
+            echo '<div><strong>' . esc_html($label) . '</strong><p>';
+            if ($label === __('IP-Adresse', 'mh-user-activity-monitor')) {
+                echo wp_kses_post($this->ipinfo_link($value));
+            } else {
+                echo esc_html((string)$value);
+            }
+            echo '</p></div>';
+        }
         echo '</div><h3>' . esc_html__('Sicherheitsmuster', 'mh-user-activity-monitor') . '</h3>';
         $flags = json_decode((string)$row['attack_flags_json'], true); $flags = is_array($flags) ? $flags : [];
         echo empty($flags) ? '<p>' . esc_html($this->dash()) . '</p>' : '<ul><li>' . implode('</li><li>', array_map('esc_html', $flags)) . '</li></ul>';
@@ -323,8 +331,8 @@ final class Admin {
         settings_fields('mhuam_settings_group');
         echo '<table class="form-table" role="presentation">';
         echo '<tr><th>' . esc_html__('Datenschutzmodus', 'mh-user-activity-monitor') . '</th><td><select name="' . esc_attr(Settings::OPTION) . '[privacy_mode]">';
-        foreach (['standard' => __('Standard', 'mh-user-activity-monitor'), 'data_saving' => __('Datensparsam', 'mh-user-activity-monitor'), 'strict' => __('Streng', 'mh-user-activity-monitor')] as $k => $label) { echo '<option value="' . esc_attr($k) . '" ' . selected($s['privacy_mode'] ?? 'standard', $k, false) . '>' . esc_html($label) . '</option>'; }
-        echo '</select><p class="description">' . esc_html__('Standard speichert die aktivierten Details datensparsam ohne URL-Parameter. Datensparsam speichert Referrer nur als Domain, IPs nur als Hash, keine User-Agents und Warenkörbe nur als Anzahl. Streng speichert keine Referrer, keine User-Agents, keine Warenkorbdaten und deaktiviert den Frontend-Ping effektiv.', 'mh-user-activity-monitor') . '</p></td></tr>';
+        foreach (['none' => __('Keinen', 'mh-user-activity-monitor'), 'standard' => __('Standard', 'mh-user-activity-monitor'), 'data_saving' => __('Datensparsam', 'mh-user-activity-monitor'), 'strict' => __('Streng', 'mh-user-activity-monitor')] as $k => $label) { echo '<option value="' . esc_attr($k) . '" ' . selected($s['privacy_mode'] ?? 'standard', $k, false) . '>' . esc_html($label) . '</option>'; }
+        echo '</select><p class="description">' . esc_html__('Keinen wendet keinen zusätzlichen Datenschutzmodus an und nutzt nur die einzelnen aktivierten Einstellungen. Standard speichert die aktivierten Details datensparsam ohne URL-Parameter. Datensparsam speichert Referrer nur als Domain, IPs nur als Hash, keine User-Agents und Warenkörbe nur als Anzahl. Streng speichert keine Referrer, keine User-Agents, keine Warenkorbdaten und deaktiviert den Frontend-Ping effektiv.', 'mh-user-activity-monitor') . '</p></td></tr>';
         $this->input_number('online_seconds', __('Online-Zeitfenster in Sekunden', 'mh-user-activity-monitor'), $s['online_seconds']);
         $this->input_number('retention_seconds', __('Speicherzeit in Sekunden', 'mh-user-activity-monitor'), $s['retention_seconds']);
         echo '<tr><th>' . esc_html__('IP-Modus', 'mh-user-activity-monitor') . '</th><td><select name="' . esc_attr(Settings::OPTION) . '[ip_mode]">';
@@ -619,6 +627,20 @@ final class Admin {
         $absolute = esc_html(get_date_from_gmt($mysql_gmt, 'd.m.Y H:i:s'));
         $relative = esc_html(human_time_diff($timestamp, time()));
         return $absolute . '<br><span>' . $relative . '</span>';
+    }
+
+    private function ipinfo_link($ip_display): string {
+        $ip = trim((string)$ip_display);
+        if ($ip === '' || $ip === '—') {
+            return esc_html($ip);
+        }
+
+        if (!filter_var($ip, FILTER_VALIDATE_IP)) {
+            return esc_html($ip);
+        }
+
+        $url = 'https://ipinfo.io/' . rawurlencode($ip);
+        return '<a href="' . esc_url($url) . '" target="_blank" rel="noopener noreferrer">' . esc_html($ip) . '</a>';
     }
 
     private function url_link($url): string { $url = (string)$url; if ($url === '') { return esc_html($this->dash()); } return '<a href="' . esc_url($url) . '" target="_blank" rel="noopener noreferrer nofollow">' . esc_html($this->short_url($url)) . '</a>'; }

@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: MH User Activity Monitor 1.65\n"
+"Project-Id-Version: MH User Activity Monitor 1.67\n"
 ""
 "Report-Msgid-Bugs-To: \n"
 ""
-"PO-Revision-Date: 2026-06-09 09:50+0000\n"
+"PO-Revision-Date: 2026-06-09 14:12+0000\n"
 ""
 "MIME-Version: 1.0\n"
 ""
@@ -200,6 +200,12 @@ msgstr "No permission."
 
 msgid "Keine aktiven Sessions gefunden."
 msgstr "No active sessions found."
+
+msgid "Keinen"
+msgstr "Nincs"
+
+msgid "Keinen wendet keinen zusätzlichen Datenschutzmodus an und nutzt nur die einzelnen aktivierten Einstellungen. Standard speichert die aktivierten Details datensparsam ohne URL-Parameter. Datensparsam speichert Referrer nur als Domain, IPs nur als Hash, keine User-Agents und Warenkörbe nur als Anzahl. Streng speichert keine Referrer, keine User-Agents, keine Warenkorbdaten und deaktiviert den Frontend-Ping effektiv."
+msgstr "Keinen wendet keinen zusätzlichen Datenschutzmodus an und nutzt nur die einzelnen aktivierten Einstellungen. Standard speichert die aktivierten Details datensparsam ohne URL-Parameter. Datensparsam speichert Referrer nur als Domain, IPs nur als Hash, keine User-Agents und Warenkörbe nur als Anzahl. Streng speichert keine Referrer, keine User-Agents, keine Warenkorbdaten und deaktiviert den Frontend-Ping effektiv."
 
 msgid "Kunden online"
 msgstr "Customers online"
