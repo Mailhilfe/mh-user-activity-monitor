@@ -1,6 +1,7 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: MH User Activity Monitor 1.63\n"
+"Project-Id-Version: MH User Activity Monitor 1.64
+"
 ""
 "Report-Msgid-Bugs-To: \n"
 ""

@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) { exit; }
 
 final class DB {
     public const DB_VERSION_OPTION = 'mhuam_db_version';
-    public const DB_VERSION = '1.63';
+    public const DB_VERSION = '1.64';
     private const STATS_CACHE_KEY = 'mhuam_stats_cache';
     private Settings $settings;
 

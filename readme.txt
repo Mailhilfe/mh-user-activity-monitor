@@ -4,7 +4,7 @@ Tags: users, activity, woocommerce, bots, monitoring
 Requires at least: 6.2
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.63
+Stable tag: 1.64
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,10 @@ Typische Einsatzfälle sind:
 * Betreiber kleinerer Websites möchten eine einfache Live-Übersicht ohne externe Trackingdienste.
 
 Das Plugin ist für kurzfristige technische Überwachung gedacht. Betreiber sollten prüfen, welche Daten sie wirklich benötigen, wie lange diese gespeichert werden und ob Hinweise in der Datenschutzerklärung erforderlich sind.
+
+= Stabilitätsvermerk =
+
+Diese Version ist als stabile Fassung gekennzeichnet. Die Übersetzungen, Hilfetexte, Screenshots, Versionsangaben und grundlegenden PHP-/ZIP-Prüfungen wurden erneut kontrolliert.
 
 == Requirements ==
 
@@ -115,6 +119,10 @@ Das Plugin stellt datenschutzfreundliche Einstellungen bereit. Die rechtliche Be
 4. Datenschutzeinstellungen mit IP-Anonymisierung, Speicherzeit und Datensparmodus.
 
 == Changelog ==
+
+= 1.64 =
+* Stable release: This version has been reviewed, translations were synchronized, screenshots were added and the current build is marked as stable.
+* Stability note: This version is intended as the current stable release for WordPress.org submission and production testing.
 
 = 1.63 =
 * Rechecked and completed multilingual translations for screenshot captions, cart/session plural strings and remaining admin labels.

@@ -95,7 +95,8 @@ final class HelpDocs {
         "Screenshot 1 zeigt die Live-Übersicht aktiver Besucher, Benutzer und Bots im WordPress-Adminbereich.",
         "Screenshot 2 zeigt die Detailansicht einer aktiven Sitzung mit IP-Modus, User-Agent und Seitenverlauf.",
         "Screenshot 3 zeigt die WooCommerce-Warenkorb-Übersicht mit aktiven Warenkorb-Sitzungen.",
-        "Screenshot 4 zeigt die Datenschutzeinstellungen mit IP-Anonymisierung, Speicherzeit und Datensparmodus."
+        "Screenshot 4 zeigt die Datenschutzeinstellungen mit IP-Anonymisierung, Speicherzeit und Datensparmodus.",
+        "Diese Version ist als stabile Fassung gekennzeichnet und wurde vor der Bereitstellung erneut geprüft."
       ]
     ]
   ],
@@ -181,7 +182,8 @@ final class HelpDocs {
         "Screenshot 1 shows the live overview of active visitors, users and bots in the WordPress admin area.",
         "Screenshot 2 shows the detail view of an active session with IP mode, user agent and page history.",
         "Screenshot 3 shows the WooCommerce cart overview with active cart sessions.",
-        "Screenshot 4 shows the privacy settings with IP anonymization, retention time and data-saving mode."
+        "Screenshot 4 shows the privacy settings with IP anonymization, retention time and data-saving mode.",
+        "This version is marked as stable and was rechecked before release."
       ]
     ]
   ],
@@ -238,7 +240,8 @@ final class HelpDocs {
         "La capture 1 affiche la vue en direct des visiteurs, utilisateurs et bots actifs dans l’administration WordPress.",
         "La capture 2 affiche le détail d’une session active avec le mode IP, l’agent utilisateur et l’historique des pages.",
         "La capture 3 affiche la vue des paniers WooCommerce avec les sessions de panier actives.",
-        "La capture 4 affiche les réglages de confidentialité avec anonymisation IP, durée de conservation et mode économie de données."
+        "La capture 4 affiche les réglages de confidentialité avec anonymisation IP, durée de conservation et mode économie de données.",
+        "Cette version est marquée comme stable et a été vérifiée à nouveau avant publication."
       ]
     ]
   ],
@@ -295,7 +298,8 @@ final class HelpDocs {
         "La captura 1 muestra la vista en directo de visitantes, usuarios y bots activos en el área de administración de WordPress.",
         "La captura 2 muestra el detalle de una sesión activa con modo de IP, agente de usuario e historial de páginas.",
         "La captura 3 muestra la vista de carritos de WooCommerce con sesiones de carrito activas.",
-        "La captura 4 muestra los ajustes de privacidad con anonimización de IP, tiempo de conservación y modo de ahorro de datos."
+        "La captura 4 muestra los ajustes de privacidad con anonimización de IP, tiempo de conservación y modo de ahorro de datos.",
+        "Esta versión está marcada como estable y se volvió a comprobar antes de su publicación."
       ]
     ]
   ],
@@ -352,7 +356,8 @@ final class HelpDocs {
         "Lo screenshot 1 mostra la panoramica live di visitatori, utenti e bot attivi nell’area di amministrazione WordPress.",
         "Lo screenshot 2 mostra il dettaglio di una sessione attiva con modalità IP, user agent e cronologia delle pagine.",
         "Lo screenshot 3 mostra la panoramica dei carrelli WooCommerce con sessioni carrello attive.",
-        "Lo screenshot 4 mostra le impostazioni privacy con anonimizzazione IP, tempo di conservazione e modalità risparmio dati."
+        "Lo screenshot 4 mostra le impostazioni privacy con anonimizzazione IP, tempo di conservazione e modalità risparmio dati.",
+        "Questa versione è contrassegnata come stabile ed è stata ricontrollata prima del rilascio."
       ]
     ]
   ],
@@ -409,7 +414,8 @@ final class HelpDocs {
         "Screenshot 1 toont het live-overzicht van actieve bezoekers, gebruikers en bots in het WordPress-beheer.",
         "Screenshot 2 toont de detailweergave van een actieve sessie met IP-modus, user-agent en paginageschiedenis.",
         "Screenshot 3 toont het WooCommerce-winkelwagenoverzicht met actieve winkelwagensessies.",
-        "Screenshot 4 toont de privacy-instellingen met IP-anonimisering, bewaartijd en databesparende modus."
+        "Screenshot 4 toont de privacy-instellingen met IP-anonimisering, bewaartijd en databesparende modus.",
+        "Deze versie is gemarkeerd als stabiel en is vóór publicatie opnieuw gecontroleerd."
       ]
     ]
   ],
@@ -466,7 +472,8 @@ final class HelpDocs {
         "Zrzut 1 pokazuje podgląd na żywo aktywnych odwiedzających, użytkowników i botów w panelu WordPress.",
         "Zrzut 2 pokazuje szczegóły aktywnej sesji z trybem IP, user-agentem i historią stron.",
         "Zrzut 3 pokazuje przegląd koszyków WooCommerce z aktywnymi sesjami koszyka.",
-        "Zrzut 4 pokazuje ustawienia prywatności z anonimizacją IP, czasem przechowywania i trybem oszczędzania danych."
+        "Zrzut 4 pokazuje ustawienia prywatności z anonimizacją IP, czasem przechowywania i trybem oszczędzania danych.",
+        "Ta wersja jest oznaczona jako stabilna i została ponownie sprawdzona przed wydaniem."
       ]
     ]
   ],
@@ -523,7 +530,8 @@ final class HelpDocs {
         "A captura 1 mostra a visão em direto de visitantes, utilizadores e bots ativos na área de administração do WordPress.",
         "A captura 2 mostra a vista detalhada de uma sessão ativa com modo de IP, agente do utilizador e histórico de páginas.",
         "A captura 3 mostra a visão dos carrinhos WooCommerce com sessões de carrinho ativas.",
-        "A captura 4 mostra as definições de privacidade com anonimização de IP, tempo de retenção e modo de poupança de dados."
+        "A captura 4 mostra as definições de privacidade com anonimização de IP, tempo de retenção e modo de poupança de dados.",
+        "Esta versão está marcada como estável e foi revista novamente antes da publicação."
       ]
     ]
   ],
@@ -580,7 +588,8 @@ final class HelpDocs {
         "A captura 1 mostra a visão ao vivo de visitantes, usuários e bots ativos na área administrativa do WordPress.",
         "A captura 2 mostra a visualização detalhada de uma sessão ativa com modo de IP, agente de usuário e histórico de páginas.",
         "A captura 3 mostra a visão geral dos carrinhos WooCommerce com sessões de carrinho ativas.",
-        "A captura 4 mostra as configurações de privacidade com anonimização de IP, tempo de retenção e modo de economia de dados."
+        "A captura 4 mostra as configurações de privacidade com anonimização de IP, tempo de retenção e modo de economia de dados.",
+        "Esta versão está marcada como estável e foi verificada novamente antes do lançamento."
       ]
     ]
   ],
@@ -637,7 +646,8 @@ final class HelpDocs {
         "Скриншот 1 показывает живой обзор активных посетителей, пользователей и ботов в админке WordPress.",
         "Скриншот 2 показывает подробности активной сессии с режимом IP, user-agent и историей страниц.",
         "Скриншот 3 показывает обзор корзин WooCommerce с активными сессиями корзины.",
-        "Скриншот 4 показывает настройки конфиденциальности с анонимизацией IP, сроком хранения и режимом экономии данных."
+        "Скриншот 4 показывает настройки конфиденциальности с анонимизацией IP, сроком хранения и режимом экономии данных.",
+        "Эта версия отмечена как стабильная и была повторно проверена перед выпуском."
       ]
     ]
   ],
@@ -694,7 +704,8 @@ final class HelpDocs {
         "Знімок 1 показує живий огляд активних відвідувачів, користувачів і ботів в адмінці WordPress.",
         "Знімок 2 показує деталі активної сесії з режимом IP, user-agent і історією сторінок.",
         "Знімок 3 показує огляд кошиків WooCommerce з активними сесіями кошика.",
-        "Знімок 4 показує налаштування приватності з анонімізацією IP, часом зберігання і режимом економії даних."
+        "Знімок 4 показує налаштування приватності з анонімізацією IP, часом зберігання і режимом економії даних.",
+        "Цю версію позначено як стабільну та повторно перевірено перед випуском."
       ]
     ]
   ],
@@ -751,7 +762,8 @@ final class HelpDocs {
         "Ekran görüntüsü 1, WordPress yönetim alanındaki aktif ziyaretçileri, kullanıcıları ve botları canlı olarak gösterir.",
         "Ekran görüntüsü 2, IP modu, kullanıcı aracısı ve sayfa geçmişiyle aktif bir oturumun ayrıntılarını gösterir.",
         "Ekran görüntüsü 3, aktif sepet oturumlarıyla WooCommerce sepet görünümünü gösterir.",
-        "Ekran görüntüsü 4, IP anonimleştirme, saklama süresi ve veri tasarrufu modu içeren gizlilik ayarlarını gösterir."
+        "Ekran görüntüsü 4, IP anonimleştirme, saklama süresi ve veri tasarrufu modu içeren gizlilik ayarlarını gösterir.",
+        "Bu sürüm kararlı olarak işaretlendi ve yayımlanmadan önce yeniden kontrol edildi."
       ]
     ]
   ],
@@ -808,7 +820,8 @@ final class HelpDocs {
         "تعرض اللقطة 1 النظرة الحية للزوار والمستخدمين والروبوتات النشطة في لوحة تحكم WordPress.",
         "تعرض اللقطة 2 تفاصيل جلسة نشطة مع وضع عنوان IP ووكيل المستخدم وسجل الصفحات.",
         "تعرض اللقطة 3 نظرة عامة على سلال WooCommerce مع جلسات سلة نشطة.",
-        "تعرض اللقطة 4 إعدادات الخصوصية مع إخفاء عنوان IP ومدة الاحتفاظ ووضع تقليل البيانات."
+        "تعرض اللقطة 4 إعدادات الخصوصية مع إخفاء عنوان IP ومدة الاحتفاظ ووضع تقليل البيانات.",
+        "تم تمييز هذا الإصدار كإصدار مستقر وتمت مراجعته مرة أخرى قبل الإصدار."
       ]
     ]
   ],
@@ -865,7 +878,8 @@ final class HelpDocs {
         "截图 1 显示 WordPress 后台中活跃访客、用户和机器人的实时概览。",
         "截图 2 显示带有 IP 模式、用户代理和页面历史的活跃会话详情。",
         "截图 3 显示包含活跃购物车会话的 WooCommerce 购物车概览。",
-        "截图 4 显示包含 IP 匿名化、保留时间和节省数据模式的隐私设置。"
+        "截图 4 显示包含 IP 匿名化、保留时间和节省数据模式的隐私设置。",
+        "此版本已标记为稳定版本，并在发布前再次检查。"
       ]
     ]
   ],
@@ -922,7 +936,8 @@ final class HelpDocs {
         "スクリーンショット 1 は、WordPress 管理画面でアクティブな訪問者、ユーザー、ボットのライブ概要を表示します。",
         "スクリーンショット 2 は、IP モード、ユーザーエージェント、ページ履歴を含むアクティブセッションの詳細を表示します。",
         "スクリーンショット 3 は、アクティブなカートセッションを含む WooCommerce カート概要を表示します。",
-        "スクリーンショット 4 は、IP 匿名化、保存期間、データ節約モードを含むプライバシー設定を表示します。"
+        "スクリーンショット 4 は、IP 匿名化、保存期間、データ節約モードを含むプライバシー設定を表示します。",
+        "このバージョンは安定版としてマークされ、リリース前に再確認されました。"
       ]
     ]
   ],
@@ -979,7 +994,8 @@ final class HelpDocs {
         "스크린샷 1은 WordPress 관리자 영역에서 활성 방문자, 사용자 및 봇의 실시간 개요를 보여줍니다.",
         "스크린샷 2는 IP 모드, 사용자 에이전트 및 페이지 기록이 포함된 활성 세션 상세 정보를 보여줍니다.",
         "스크린샷 3은 활성 장바구니 세션이 있는 WooCommerce 장바구니 개요를 보여줍니다.",
-        "스크린샷 4는 IP 익명화, 보관 기간 및 데이터 절약 모드가 포함된 개인정보 설정을 보여줍니다."
+        "스크린샷 4는 IP 익명화, 보관 기간 및 데이터 절약 모드가 포함된 개인정보 설정을 보여줍니다.",
+        "이 버전은 안정 버전으로 표시되었으며 릴리스 전에 다시 확인되었습니다."
       ]
     ]
   ],
@@ -1036,7 +1052,8 @@ final class HelpDocs {
         "Skärmbild 1 visar liveöversikten över aktiva besökare, användare och botar i WordPress-admin.",
         "Skärmbild 2 visar detaljvyn för en aktiv session med IP-läge, användaragent och sidhistorik.",
         "Skärmbild 3 visar WooCommerce-varukorgsöversikten med aktiva varukorgssessioner.",
-        "Skärmbild 4 visar integritetsinställningar med IP-anonymisering, lagringstid och databesparingsläge."
+        "Skärmbild 4 visar integritetsinställningar med IP-anonymisering, lagringstid och databesparingsläge.",
+        "Den här versionen är markerad som stabil och kontrollerades igen före publicering."
       ]
     ]
   ],
@@ -1093,7 +1110,8 @@ final class HelpDocs {
         "Skærmbillede 1 viser liveoversigten over aktive besøgende, brugere og bots i WordPress-administrationen.",
         "Skærmbillede 2 viser detaljevisningen af en aktiv session med IP-tilstand, user-agent og sidehistorik.",
         "Skærmbillede 3 viser WooCommerce-kurvoversigten med aktive kurvsessioner.",
-        "Skærmbillede 4 viser privatlivsindstillinger med IP-anonymisering, opbevaringstid og databesparende tilstand."
+        "Skærmbillede 4 viser privatlivsindstillinger med IP-anonymisering, opbevaringstid og databesparende tilstand.",
+        "Denne version er markeret som stabil og blev kontrolleret igen før udgivelse."
       ]
     ]
   ],
@@ -1150,7 +1168,8 @@ final class HelpDocs {
         "Snímek 1 zobrazuje živý přehled aktivních návštěvníků, uživatelů a botů v administraci WordPressu.",
         "Snímek 2 zobrazuje detail aktivní relace s režimem IP, user-agentem a historií stránek.",
         "Snímek 3 zobrazuje přehled košíků WooCommerce s aktivními relacemi košíku.",
-        "Snímek 4 zobrazuje nastavení soukromí s anonymizací IP, dobou uchování a úsporným režimem dat."
+        "Snímek 4 zobrazuje nastavení soukromí s anonymizací IP, dobou uchování a úsporným režimem dat.",
+        "Tato verze je označena jako stabilní a před vydáním byla znovu zkontrolována."
       ]
     ]
   ],
@@ -1207,7 +1226,8 @@ final class HelpDocs {
         "Az 1. képernyőkép az aktív látogatók, felhasználók és botok élő áttekintését mutatja a WordPress adminban.",
         "A 2. képernyőkép egy aktív munkamenet részleteit mutatja IP móddal, user-agenttel és oldalelőzményekkel.",
         "A 3. képernyőkép a WooCommerce kosáráttekintést mutatja aktív kosár-munkamenetekkel.",
-        "A 4. képernyőkép az adatvédelmi beállításokat mutatja IP-anonimizálással, megőrzési idővel és adattakarékos móddal."
+        "A 4. képernyőkép az adatvédelmi beállításokat mutatja IP-anonimizálással, megőrzési idővel és adattakarékos móddal.",
+        "Ez a verzió stabilként van megjelölve, és kiadás előtt újra ellenőriztük."
       ]
     ]
   ],
@@ -1264,7 +1284,8 @@ final class HelpDocs {
         "Captura 1 arată prezentarea live a vizitatorilor, utilizatorilor și boților activi în zona de administrare WordPress.",
         "Captura 2 arată detaliile unei sesiuni active cu modul IP, user-agent și istoricul paginilor.",
         "Captura 3 arată prezentarea coșurilor WooCommerce cu sesiuni active de coș.",
-        "Captura 4 arată setările de confidențialitate cu anonimizare IP, timp de păstrare și mod de economisire a datelor."
+        "Captura 4 arată setările de confidențialitate cu anonimizare IP, timp de păstrare și mod de economisire a datelor.",
+        "Această versiune este marcată ca stabilă și a fost reverificată înainte de lansare."
       ]
     ]
   ]
