@@ -4,7 +4,7 @@ Tags: users, activity, woocommerce, bots, monitoring
 Requires at least: 6.2
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.62
+Stable tag: 1.63
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -115,6 +115,9 @@ Das Plugin stellt datenschutzfreundliche Einstellungen bereit. Die rechtliche Be
 4. Datenschutzeinstellungen mit IP-Anonymisierung, Speicherzeit und Datensparmodus.
 
 == Changelog ==
+
+= 1.63 =
+* Rechecked and completed multilingual translations for screenshot captions, cart/session plural strings and remaining admin labels.
 
 = 1.62 =
 * Added WordPress.org screenshot assets and synchronized screenshot help documentation in all included languages.
