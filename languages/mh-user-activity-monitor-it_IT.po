@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: MH User Activity Monitor 1.64\n"
+"Project-Id-Version: MH User Activity Monitor 1.65\n"
 ""
 "Report-Msgid-Bugs-To: \n"
 ""
-"PO-Revision-Date: 2026-06-09 09:37+0000\n"
+"PO-Revision-Date: 2026-06-09 09:50+0000\n"
 ""
 "MIME-Version: 1.0\n"
 ""
@@ -101,6 +101,9 @@ msgstr "Data-minimizing"
 
 msgid "Datensparsamer Standard: Artikelanzahl und Warenkorbsumme. Produktnamen und SKU werden nur im Detailmodus gespeichert."
 msgstr "Data-minimizing default: item count and cart total. Product names and SKUs are stored only in detail mode."
+
+msgid "Detail view of an active session with IP mode, user agent and page history."
+msgstr "Detail view of an active session with IP mode, user agent and page history."
 
 msgid "Detailansicht"
 msgstr "Detail view"
@@ -213,6 +216,9 @@ msgstr "Empty / not available"
 msgid "Letzte Aktivität"
 msgstr "Last activity"
 
+msgid "Live overview of active visitors, users and bots in the WordPress admin area."
+msgstr "Live overview of active visitors, users and bots in the WordPress admin area."
+
 msgid "Live-Aktualisierung in Sekunden"
 msgstr "Live refresh in seconds"
 
@@ -272,6 +278,9 @@ msgstr "Online: %1$d | Robot: %2$d | Carrelli: %3$d"
 
 msgid "Plugin-Daten bei Deinstallation löschen"
 msgstr "Delete plugin data on uninstall"
+
+msgid "Privacy settings with IP anonymization, retention time and data-saving mode."
+msgstr "Privacy settings with IP anonymization, retention time and data-saving mode."
 
 msgid "Produktdetails speichern"
 msgstr "Store product details"
@@ -348,6 +357,9 @@ msgstr "Strict"
 msgid "Suchmaschine"
 msgstr "Motore di ricerca"
 
+msgid "This version is marked as the current stable build. Translations, help texts, screenshots, version metadata and basic PHP/ZIP checks were reviewed again before release."
+msgstr "This version is marked as the current stable build. Translations, help texts, screenshots, version metadata and basic PHP/ZIP checks were reviewed again before release."
+
 msgid "Total"
 msgstr "Totale"
 
@@ -377,6 +389,9 @@ msgstr "Carts"
 
 msgid "Wenn der Frontend-Ping deaktiviert ist, werden nur normale Seitenaufrufe erfasst. Regelmäßige AJAX-Pings im Frontend werden dann nicht geladen."
 msgstr "When frontend ping is disabled, only normal page views are recorded. Regular AJAX pings in the frontend are then not loaded."
+
+msgid "WooCommerce cart overview with active cart sessions."
+msgstr "WooCommerce cart overview with active cart sessions."
 
 msgid "WooCommerce-Warenkorb speichern"
 msgstr "Store WooCommerce cart"

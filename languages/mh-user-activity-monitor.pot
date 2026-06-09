@@ -1,7 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: MH User Activity Monitor 1.64
-"
+"Project-Id-Version: MH User Activity Monitor 1.65\n"
 ""
 "Report-Msgid-Bugs-To: \n"
 ""
@@ -87,9 +86,6 @@ msgstr ""
 msgid "Datenschutz-Hinweis: Dieses Plugin verarbeitet technische Besucherdaten kurzzeitig zur Website- und Shop-Überwachung. Prüfen Sie IP-Anonymisierung, Speicherzeit und Zugriffsbeschränkung."
 msgstr ""
 
-msgid "Datenschutzeinstellungen mit IP-Anonymisierung, Speicherzeit und Datensparmodus."
-msgstr ""
-
 msgid "Datenschutzmodus"
 msgstr ""
 
@@ -99,10 +95,10 @@ msgstr ""
 msgid "Datensparsamer Standard: Artikelanzahl und Warenkorbsumme. Produktnamen und SKU werden nur im Detailmodus gespeichert."
 msgstr ""
 
-msgid "Detailansicht"
+msgid "Detail view of an active session with IP mode, user agent and page history."
 msgstr ""
 
-msgid "Detailansicht einer aktiven Sitzung mit IP-Modus, User-Agent und Seitenverlauf."
+msgid "Detailansicht"
 msgstr ""
 
 msgid "Detailansicht pro Besucher inklusive Seitenverlauf"
@@ -210,10 +206,10 @@ msgstr ""
 msgid "Letzte Aktivität"
 msgstr ""
 
-msgid "Live-Aktualisierung in Sekunden"
+msgid "Live overview of active visitors, users and bots in the WordPress admin area."
 msgstr ""
 
-msgid "Live-Übersicht aktiver Besucher, Benutzer und Bots im WordPress-Adminbereich."
+msgid "Live-Aktualisierung in Sekunden"
 msgstr ""
 
 msgid "Live-Übersicht mit Dashboard-Kacheln und Filtern"
@@ -268,6 +264,9 @@ msgid "Online: %1$d | Bots: %2$d | Carts: %3$d"
 msgstr ""
 
 msgid "Plugin-Daten bei Deinstallation löschen"
+msgstr ""
+
+msgid "Privacy settings with IP anonymization, retention time and data-saving mode."
 msgstr ""
 
 msgid "Produktdetails speichern"
@@ -345,6 +344,9 @@ msgstr ""
 msgid "Suchmaschine"
 msgstr ""
 
+msgid "This version is marked as the current stable build. Translations, help texts, screenshots, version metadata and basic PHP/ZIP checks were reviewed again before release."
+msgstr ""
+
 msgid "Total"
 msgstr ""
 
@@ -375,6 +377,9 @@ msgstr ""
 msgid "Wenn der Frontend-Ping deaktiviert ist, werden nur normale Seitenaufrufe erfasst. Regelmäßige AJAX-Pings im Frontend werden dann nicht geladen."
 msgstr ""
 
+msgid "WooCommerce cart overview with active cart sessions."
+msgstr ""
+
 msgid "WooCommerce-Warenkorb speichern"
 msgstr ""
 
@@ -382,9 +387,6 @@ msgid "WooCommerce-Warenkorb-Anzeige mit datenschutzfreundlichen Einstellungen"
 msgstr ""
 
 msgid "WooCommerce-Warenkorb-Modus"
-msgstr ""
-
-msgid "WooCommerce-Warenkorb-Übersicht mit aktiven Warenkorb-Sitzungen."
 msgstr ""
 
 msgid "Zurück zur Übersicht"
