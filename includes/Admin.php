@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * MH User Activity Monitor
  *

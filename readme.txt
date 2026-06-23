@@ -4,7 +4,7 @@ Tags: users, activity, woocommerce, bots, monitoring
 Requires at least: 6.2
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.71
+Stable tag: 1.72
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -122,12 +122,17 @@ The plugin provides privacy-friendly settings. The legal assessment depends on t
 
 == Changelog ==
 
+= 1.72 =
+* Updated release metadata to use a new version number after the blocked WordPress.org SVN commit.
+* Rechecked PHP file starts, translation files, localized readmes and package contents before rebuilding the release ZIP.
+
 = 1.71 =
 * Added a CSV export for the currently filtered session overview.
 * Fixed the None privacy mode so URL query parameters are only retained when that mode is selected.
 * Enforced the IP visibility setting in the overview, detail view and CSV export, and added the missing settings control.
 * Loaded bundled translation files explicitly from the plugin languages directory.
 * Added localized readme files for every bundled language.
+* Synchronized the bundled POT, PO and MO translation files with the current plugin strings.
 
 = 1.70 =
 * Fixed the inactive "hide own IP" setting so administrator frontend visits can be excluded when enabled.

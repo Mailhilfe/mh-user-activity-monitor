@@ -1,414 +1,646 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: MH User Activity Monitor 1.67
-"
-""
+"Project-Id-Version: MH User Activity Monitor 1.72\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mh-user-activity-monitor/\n"
+"POT-Creation-Date: 2026-06-23 00:00+0000\n"
+"PO-Revision-Date: 2026-06-23 00:00+0000\n"
 "MIME-Version: 1.0\n"
-""
 "Content-Type: text/plain; charset=UTF-8\n"
-""
 "Content-Transfer-Encoding: 8bit\n"
-""
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid " + %d more"
-msgstr ""
-
-msgid "Administratoren ausblenden"
-msgstr ""
-
-msgid "Aktivieren"
-msgstr ""
-
-msgid "Aktivieren Sie diese Option nur, wenn die Website hinter einem vertrauenswürdigen Reverse Proxy oder CDN läuft und die erlaubten Proxy-IP-Adressen gepflegt sind. Sonst können Besucher IP-Adressen fälschen."
-msgstr ""
-
-msgid "Aktuelle Seite"
-msgstr ""
-
-msgid "Alle"
-msgstr ""
-
-msgid "Ampel"
-msgstr ""
-
-msgid "Angezeigte Sessions: %d"
-msgstr ""
-
-msgid "Anleitung"
-msgstr ""
-
-msgid "Anonymisiert"
-msgstr ""
-
-msgid "Artikelanzahl und Summe"
-msgstr ""
-
-msgid "Auffällige Muster"
-msgstr ""
-
-msgid "Aufrufe"
-msgstr ""
-
-msgid "Aufrufschwelle Orange"
-msgstr ""
-
-msgid "Aufrufschwelle Rot"
-msgstr ""
-
-msgid "Ausführliche Anleitung"
-msgstr ""
-
-msgid "Besucher"
-msgstr ""
-
-msgid "Besucher / Bot"
-msgstr ""
-
-msgid "Bot"
-msgstr ""
-
-msgid "Bot-Erkennung aktivieren"
-msgstr ""
-
-msgid "Bot-Erkennung mit Kategorien, Ampelanzeige und Angriffsmuster-Erkennung"
-msgstr ""
-
-msgid "Bot/Crawler"
-msgstr ""
-
-msgid "Bots online"
-msgstr ""
-
-msgid "Datenschutz-Hilfetext anzeigen"
-msgstr ""
-
-msgid "Datenschutz-Hinweis: Dieses Plugin verarbeitet technische Besucherdaten kurzzeitig zur Website- und Shop-Überwachung. Prüfen Sie IP-Anonymisierung, Speicherzeit und Zugriffsbeschränkung."
-msgstr ""
-
-msgid "Datenschutzmodus"
-msgstr ""
-
-msgid "Datensparsam"
-msgstr ""
-
-msgid "Datensparsamer Standard: Artikelanzahl und Warenkorbsumme. Produktnamen und SKU werden nur im Detailmodus gespeichert."
-msgstr ""
-
-msgid "Detail view of an active session with IP mode, user agent and page history."
-msgstr ""
-
-msgid "Detailansicht"
-msgstr ""
-
-msgid "Detailansicht pro Besucher inklusive Seitenverlauf"
-msgstr ""
-
-msgid "Details"
-msgstr ""
-
-msgid "Diese Anleitung erklärt die Einrichtung, die tägliche Nutzung, die Datenschutzoptionen und die wichtigsten Sicherheitsfunktionen des MH User Activity Monitor."
-msgstr ""
-
-msgid "Eigene Datenbanktabelle mit optimierten Indizes"
-msgstr ""
-
-msgid "Eigene IP ausblenden"
-msgstr ""
-
-msgid "Einstellungen"
-msgstr ""
-
-msgid "Erlaubte Reverse-Proxy-IP-Adressen"
-msgstr ""
-
-msgid "Erste Aktivität"
-msgstr ""
-
-msgid "Every five minutes"
-msgstr ""
-
-msgid "Frontend-Ping aktivieren"
-msgstr ""
-
-msgid "Frontend-Ping nur auf WooCommerce-Seiten aktivieren"
-msgstr ""
-
-msgid "Frontend-Ping-Intervall in Sekunden"
-msgstr ""
-
-msgid "Für 4 Wochen ausblenden"
-msgstr ""
-
-msgid "Gespeicherte Sessions wirklich löschen?"
-msgstr ""
-
-msgid "Herkunft"
-msgstr ""
-
-msgid "Hinweis: Die Anleitung ist Bestandteil der Plugin-Sprachdateien. Wenn neue Funktionen ergänzt werden, sollten die POT-Datei sowie alle PO- und MO-Dateien zusammen aktualisiert werden."
-msgstr ""
-
-msgid "IP-Adresse"
-msgstr ""
-
-msgid "IP-Modus"
-msgstr ""
-
-msgid "Ignorierlisten für IP-Adressen, URLs und User-Agents"
-msgstr ""
-
-msgid "Ignorierte IP-Adressen"
-msgstr ""
-
-msgid "Ignorierte IP-Adressen unterstützen einzelne IPs, IPv4-Wildcards sowie IPv4- und IPv6-CIDR-Bereiche."
-msgstr ""
-
-msgid "Ignorierte URLs"
-msgstr ""
-
-msgid "Ignorierte User-Agents"
-msgstr ""
-
-msgid "Installed plugin version: %s"
-msgstr ""
-
-msgid "KI-Assistent / Live-Abruf"
-msgstr ""
-
-msgid "KI-Crawler"
-msgstr ""
-
-msgid "KI-Suchmaschine"
-msgstr ""
-
-msgid "KI-Training / Datensammlung"
-msgstr ""
-
+#: mh-user-activity-monitor/includes/Admin.php:28
+#: mh-user-activity-monitor/includes/Admin.php:34
 msgid "Keine Berechtigung."
 msgstr ""
 
-msgid "Keine aktiven Sessions gefunden."
-msgstr ""
-
-msgid "Kunden online"
-msgstr ""
-
-msgid "Kurzen Seitenverlauf speichern"
-msgstr ""
-
-msgid "Kurzzeitige Speicherung mit automatischer Bereinigung über WordPress-Cron"
-msgstr ""
-
-msgid "Leer / nicht verfügbar"
-msgstr ""
-
-msgid "Letzte Aktivität"
-msgstr ""
-
-msgid "Live overview of active visitors, users and bots in the WordPress admin area."
-msgstr ""
-
-msgid "Live-Aktualisierung in Sekunden"
-msgstr ""
-
-msgid "Live-Übersicht mit Dashboard-Kacheln und Filtern"
-msgstr ""
-
-msgid "MH User Activity Monitor: Bei vielen gleichzeitigen Sessions können mehrere Transients geschrieben werden. Für stark besuchte Websites wird ein persistenter Objektcache wie Redis oder Memcached empfohlen."
-msgstr ""
-
-msgid "MH User Activity Monitor: Die Website läuft aktuell nicht über HTTPS. Das Session-Cookie wird deshalb ohne Secure-Flag gesetzt, weil Browser es sonst auf HTTP-Seiten nicht speichern würden. Für bessere Cookie-Sicherheit wird HTTPS empfohlen."
-msgstr ""
-
-msgid "MH User Activity Monitor: Proxy-Header sind aktiviert, aber es wurden keine erlaubten Proxy-IP-Adressen eingetragen. In dieser Konfiguration werden Proxy-Header zwar nicht ausgewertet, die Einstellung ist aber unsicher vorbereitet. Tragen Sie die IP-Adressen Ihres Reverse Proxys oder CDN ein oder deaktivieren Sie die Option."
-msgstr ""
-
-msgid "Maximale Sessions"
-msgstr ""
-
-msgid "Monitoring"
-msgstr ""
-
-msgid "Name / Agent"
-msgstr ""
-
-msgid "Nur Artikelanzahl"
-msgstr ""
-
-msgid "Nur Bots"
-msgstr ""
-
-msgid "Nur Hash"
-msgstr ""
-
-msgid "Nur Kunden"
-msgstr ""
-
-msgid "Nur Warenkorb"
-msgstr ""
-
-msgid "Offline"
-msgstr ""
-
-msgid "Online"
-msgstr ""
-
-msgid "Online-Zeitfenster in Sekunden"
-msgstr ""
-
-msgid "Online: %1$d | Bots: %2$d"
-msgstr ""
-
-msgid "Online: %1$d | Bots: %2$d | Carts: %3$d"
-msgstr ""
-
-msgid "Plugin-Daten bei Deinstallation löschen"
-msgstr ""
-
-msgid "Privacy settings with IP anonymization, retention time and data-saving mode."
-msgstr ""
-
-msgid "Produktdetails speichern"
-msgstr ""
-
-msgid "Produktdetails werden im aktuellen Warenkorb-Modus nicht gespeichert."
-msgstr ""
-
-msgid "Produktname nicht gespeichert"
-msgstr ""
-
-msgid "Proxy-Header für echte Besucher-IP vertrauen"
-msgstr ""
-
-msgid "Proxy-Header sind aktiv. Header werden nur ausgewertet, wenn die aktuelle REMOTE_ADDR in der Liste der erlaubten Proxy-IP-Adressen steht. Hinterlegen Sie dort ausschließlich die IP-Adressen Ihres Reverse Proxys oder CDN."
-msgstr ""
-
-msgid "Proxy-Header werden nur akzeptiert, wenn REMOTE_ADDR zu dieser Liste passt. Lassen Sie die Liste leer, wenn kein Reverse Proxy oder CDN verwendet wird."
-msgstr ""
-
-msgid "Proxy-Header wurden nicht aktiviert, weil folgende Proxy-IP-Regeln ungültig sind: %s"
-msgstr ""
-
-msgid "Proxy-Header wurden nicht aktiviert, weil keine vertrauenswürdigen Proxy-IP-Adressen eingetragen wurden. Tragen Sie zuerst die IP-Adressen Ihres Reverse Proxys oder CDN ein und speichern Sie die Einstellung anschließend erneut."
-msgstr ""
-
-msgid "Referrer speichern"
-msgstr ""
-
-msgid "SEO-Tool"
-msgstr ""
-
-msgid "Scanner"
-msgstr ""
-
-msgid "Seite %1$d von %2$d"
-msgstr ""
-
-msgid "Seitentyp"
-msgstr ""
-
-msgid "Seitenverlauf"
-msgstr ""
-
-msgid "Session nicht gefunden."
-msgstr ""
-
-msgid "Sessions gesamt"
-msgstr ""
-
-msgid "Sessions löschen"
-msgstr ""
-
-msgid "Sicherheitsmuster"
-msgstr ""
-
-msgid "Social Preview"
-msgstr ""
-
-msgid "Speicherzeit in Sekunden"
-msgstr ""
-
-msgid "Standard"
-msgstr ""
-
-msgid "Standard speichert die aktivierten Details datensparsam ohne URL-Parameter. Datensparsam speichert Referrer nur als Domain, IPs nur als Hash, keine User-Agents und Warenkörbe nur als Anzahl. Streng speichert keine Referrer, keine User-Agents, keine Warenkorbdaten und deaktiviert den Frontend-Ping effektiv."
-msgstr ""
-
-msgid "Status"
-msgstr ""
-
-msgid "Streng"
-msgstr ""
-
-msgid "Suchmaschine"
-msgstr ""
-
-msgid "This version is marked as the current stable build. Translations, help texts, screenshots, version metadata and basic PHP/ZIP checks were reviewed again before release."
-msgstr ""
-
-msgid "Total"
-msgstr ""
-
-msgid "Typ"
-msgstr ""
-
-msgid "Unbekannter Bot"
-msgstr ""
-
-msgid "Unknown product"
-msgstr ""
-
-msgid "User-Agent"
-msgstr ""
-
-msgid "User-Agent speichern"
-msgstr ""
-
-msgid "Vollständig"
-msgstr ""
-
-msgid "Warenkorb"
-msgstr ""
-
-msgid "Warenkörbe"
-msgstr ""
-
-msgid "Wenn der Frontend-Ping deaktiviert ist, werden nur normale Seitenaufrufe erfasst. Regelmäßige AJAX-Pings im Frontend werden dann nicht geladen."
-msgstr ""
-
-msgid "WooCommerce cart overview with active cart sessions."
-msgstr ""
-
-msgid "WooCommerce-Warenkorb speichern"
-msgstr ""
-
-msgid "WooCommerce-Warenkorb-Anzeige mit datenschutzfreundlichen Einstellungen"
-msgstr ""
-
-msgid "WooCommerce-Warenkorb-Modus"
-msgstr ""
-
-msgid "Zurück zur Übersicht"
-msgstr ""
-
+#: mh-user-activity-monitor/includes/Admin.php:59
 msgid "Übersicht"
 msgstr ""
 
+#: mh-user-activity-monitor/includes/Admin.php:60
+#: mh-user-activity-monitor/includes/Admin.php:78
+#: mh-user-activity-monitor/includes/Admin.php:347
+msgid "Einstellungen"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:61
+msgid "Anleitung"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:90
+msgid ""
+"MH User Activity Monitor: Proxy-Header sind aktiviert, aber es wurden keine erlaubten Proxy-IP-Adressen eingetragen. In dieser Konfiguration werden Proxy-Header zwar nicht ausgewertet, die Einstellung ist aber unsicher vorbereitet. Tragen Sie die IP-Adressen Ihres Reverse Proxys oder CDN ein oder deaktivieren Sie die Option."
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:94
+msgid ""
+"MH User Activity Monitor: Die Website läuft aktuell nicht über HTTPS. Das Session-Cookie wird deshalb ohne Secure-Flag gesetzt, weil Browser es sonst auf HTTP-Seiten nicht speichern würden. Für bessere Cookie-Sicherheit wird HTTPS empfohlen."
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:100
+msgid ""
+"MH User Activity Monitor: Bei vielen gleichzeitigen Sessions können mehrere Transients geschrieben werden. Für stark besuchte Websites wird ein persistenter Objektcache wie Redis oder Memcached empfohlen."
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:113
+msgid ""
+"Proxy-Header sind aktiv. Header werden nur ausgewertet, wenn die aktuelle REMOTE_ADDR in der Liste der erlaubten Proxy-IP-Adressen steht. Hinterlegen Sie dort ausschließlich die IP-Adressen Ihres Reverse Proxys oder CDN."
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:127
+#: mh-user-activity-monitor/includes/Admin.php:234
+#: mh-user-activity-monitor/includes/Admin.php:707
+msgid "Online"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:128
+msgid "Bots online"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:129
+msgid "Kunden online"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:132
+msgid "Warenkörbe"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:134
+#: mh-user-activity-monitor/includes/Admin.php:299
+msgid "Orange"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:135
+#: mh-user-activity-monitor/includes/Admin.php:297
+msgid "Rot"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:136
+msgid "Auffällige Muster"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:137
+msgid "Sessions gesamt"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:148
+msgid "Alle"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:148
+msgid "Auffällig"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:148
+msgid "Nur Bots"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:148
+msgid "Nur Kunden"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:150
+msgid "Nur Warenkorb"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:156
+msgid "Filter:"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:161
+msgid "CSV exportieren"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:164
+msgid "Gespeicherte Sessions wirklich löschen?"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:164
+msgid "Sessions löschen"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:185
+#: mh-user-activity-monitor/includes/Admin.php:673
+msgid "Besucher / Bot"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:185
+#: mh-user-activity-monitor/includes/Admin.php:312
+#: mh-user-activity-monitor/includes/Admin.php:677
+msgid "IP-Adresse"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:185
+#: mh-user-activity-monitor/includes/Admin.php:318
+#: mh-user-activity-monitor/includes/Admin.php:679
+msgid "Aktuelle Seite"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:185
+#: mh-user-activity-monitor/includes/Admin.php:322
+#: mh-user-activity-monitor/includes/Admin.php:681
+msgid "Aufrufe"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:185
+#: mh-user-activity-monitor/includes/Admin.php:321
+#: mh-user-activity-monitor/includes/Admin.php:683
+msgid "Letzte Aktivität"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:185
+#: mh-user-activity-monitor/includes/Admin.php:684
+msgid "Ampel"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:187
+#: mh-user-activity-monitor/includes/Admin.php:340
+#: mh-user-activity-monitor/includes/Admin.php:691
+msgid "Warenkorb"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:189
+#: mh-user-activity-monitor/includes/Admin.php:233
+msgid "Details"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:189
+#: mh-user-activity-monitor/includes/Admin.php:672
+msgid "Status"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:195
+#: mh-user-activity-monitor/includes/Admin.php:324
+#: mh-user-activity-monitor/includes/Admin.php:693
+msgid "User-Agent"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:197
+msgid "Keine aktiven Sessions gefunden."
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:207
+msgid "Angezeigte Sessions: %d"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:219
+msgid "Seite %1$d von %2$d"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:234
+#: mh-user-activity-monitor/includes/Admin.php:707
+msgid "Offline"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:268
+msgid "KI-Assistent / Live-Abruf"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:270
+msgid "KI-Suchmaschine"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:272
+msgid "KI-Training / Datensammlung"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:274
+msgid "KI-Crawler"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:276
+msgid "Suchmaschine"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:278
+msgid "SEO-Tool"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:280
+msgid "Social Preview"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:282
+msgid "Monitoring"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:284
+msgid "Scanner"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:286
+msgid "Unbekannter Bot"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:288
+msgid "Bot/Crawler"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:301
+msgid "Gelb"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:303
+msgid "Grün"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:309
+msgid "Zurück zur Übersicht"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:310
+msgid "Session nicht gefunden."
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:311
+msgid "Detailansicht"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:314
+msgid "Typ"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:315
+#: mh-user-activity-monitor/includes/Admin.php:674
+msgid "Name / Agent"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:317
+#: mh-user-activity-monitor/includes/Admin.php:678
+msgid "Seitentyp"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:319
+#: mh-user-activity-monitor/includes/Admin.php:680
+msgid "Herkunft"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:320
+#: mh-user-activity-monitor/includes/Admin.php:682
+msgid "Erste Aktivität"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:323
+#: mh-user-activity-monitor/includes/Admin.php:685
+msgid "Bot"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:335
+#: mh-user-activity-monitor/includes/Admin.php:688
+msgid "Sicherheitsmuster"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:338
+#: mh-user-activity-monitor/includes/Admin.php:803
+msgid "Seitenverlauf"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:352
+msgid "Datenschutzmodus"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:353
+msgid "Keinen"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:353
+msgid "Standard"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:353
+msgid "Datensparsam"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:353
+msgid "Streng"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:354
+msgid ""
+"Keinen wendet keinen zusätzlichen Datenschutzmodus an und nutzt nur die einzelnen aktivierten Einstellungen. Standard speichert die aktivierten Details datensparsam ohne URL-Parameter. Datensparsam speichert Referrer nur als Domain, IPs nur als Hash, keine User-Agents und Warenkörbe nur als Anzahl. Streng speichert keine Referrer, keine User-Agents, keine Warenkorbdaten und deaktiviert den Frontend-Ping effektiv."
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:355
+msgid "Online-Zeitfenster in Sekunden"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:356
+msgid "Speicherzeit in Sekunden"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:357
+msgid "IP-Modus"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:358
+msgid "Vollständig"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:358
+msgid "Anonymisiert"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:358
+msgid "Nur Hash"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:360
+msgid "IP-Adressen sichtbar für"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:361
+msgid "Nur Administratoren"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:361
+msgid "Administratoren und Benutzerverwaltung"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:362
+msgid "Legt fest, ob Rollen mit Benutzerlisten-Recht IP-Werte in Übersicht, Details und CSV-Export sehen dürfen."
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:364
+msgid "WooCommerce-Warenkorb-Modus"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:365
+msgid "Nur Artikelanzahl"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:365
+msgid "Artikelanzahl und Summe"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:365
+msgid "Produktdetails speichern"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:366
+msgid ""
+"Datensparsamer Standard: Artikelanzahl und Warenkorbsumme. Produktnamen und SKU werden nur im Detailmodus gespeichert."
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:368
+msgid "Administratoren ausblenden"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:368
+msgid "Eigene IP ausblenden"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:368
+msgid "Referrer speichern"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:368
+msgid "User-Agent speichern"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:370
+msgid "WooCommerce-Warenkorb speichern"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:372
+msgid "Bot-Erkennung aktivieren"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:372
+msgid "Kurzen Seitenverlauf speichern"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:372
+msgid "Datenschutz-Hilfetext anzeigen"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:372
+msgid "Frontend-Ping aktivieren"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:374
+msgid "Frontend-Ping nur auf WooCommerce-Seiten aktivieren"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:376
+msgid "Plugin-Daten bei Deinstallation löschen"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:381
+msgid "Erlaubte Reverse-Proxy-IP-Adressen"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:382
+msgid ""
+"Proxy-Header werden nur akzeptiert, wenn REMOTE_ADDR zu dieser Liste passt. Lassen Sie die Liste leer, wenn kein Reverse Proxy oder CDN verwendet wird."
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:383
+msgid "Ignorierte IP-Adressen"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:384
+msgid "Ignorierte IP-Adressen unterstützen einzelne IPs, IPv4-Wildcards sowie IPv4- und IPv6-CIDR-Bereiche."
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:385
+msgid "Ignorierte URLs"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:386
+msgid "Ignorierte User-Agents"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:387
+msgid "Maximale Sessions"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:388
+msgid "Aufrufschwelle Orange"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:389
+msgid "Aufrufschwelle Rot"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:390
+msgid "Live-Aktualisierung in Sekunden"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:391
+msgid "Frontend-Ping-Intervall in Sekunden"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:392
+msgid ""
+"Wenn der Frontend-Ping deaktiviert ist, werden nur normale Seitenaufrufe erfasst. Regelmäßige AJAX-Pings im Frontend werden dann nicht geladen."
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:400
+msgid "Ausführliche Anleitung"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:402
+msgid "Installed plugin version: %s"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:403
+msgid ""
+"Diese Anleitung erklärt die Einrichtung, die tägliche Nutzung, die Datenschutzoptionen und die wichtigsten Sicherheitsfunktionen des MH User Activity Monitor."
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:419
+msgid ""
+"Hinweis: Die Anleitung ist Bestandteil der Plugin-Sprachdateien. Wenn neue Funktionen ergänzt werden, sollten die POT-Datei sowie alle PO- und MO-Dateien zusammen aktualisiert werden."
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:429
+msgid "Online: %1$d | Bots: %2$d | Carts: %3$d"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:432
+msgid "Online: %1$d | Bots: %2$d"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:434
 msgid "Übersicht öffnen"
 msgstr ""
 
+#: mh-user-activity-monitor/includes/Admin.php:556
+msgid "Für 4 Wochen ausblenden"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:650
+msgid "Proxy-Header für echte Besucher-IP vertrauen"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:650
+msgid ""
+"Aktivieren Sie diese Option nur, wenn die Website hinter einem vertrauenswürdigen Reverse Proxy oder CDN läuft und die erlaubten Proxy-IP-Adressen gepflegt sind. Sonst können Besucher IP-Adressen fälschen."
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:650
+#: mh-user-activity-monitor/includes/Admin.php:757
+msgid "Aktivieren"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:671
+msgid "Session-ID"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:675
+msgid "Benutzername"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:676
+msgid "Rollen"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:686
+msgid "Bot-Kategorie"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:687
+msgid "Bot-Name"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:720
+msgid "Ja"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:720
+msgid "Nein"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:748
+msgid "Ausgeblendet"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:762
+msgid ""
+"Datenschutz-Hinweis: Dieses Plugin verarbeitet technische Besucherdaten kurzzeitig zur Website- und Shop-Überwachung. Prüfen Sie IP-Anonymisierung, Speicherzeit und Zugriffsbeschränkung."
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:769
+msgid "Live-Übersicht mit Dashboard-Kacheln und Filtern"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:770
+msgid "Detailansicht pro Besucher inklusive Seitenverlauf"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:771
+msgid "WooCommerce-Warenkorb-Anzeige mit datenschutzfreundlichen Einstellungen"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:772
+msgid "Bot-Erkennung mit Kategorien, Ampelanzeige und Angriffsmuster-Erkennung"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:773
+msgid "Eigene Datenbanktabelle mit optimierten Indizes"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:774
+msgid "Ignorierlisten für IP-Adressen, URLs und User-Agents"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:775
+msgid "Kurzzeitige Speicherung mit automatischer Bereinigung über WordPress-Cron"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:823
+#: mh-user-activity-monitor/includes/Admin.php:844
+#: mh-user-activity-monitor/includes/Admin.php:928
+#: mh-user-activity-monitor/includes/Admin.php:942
+msgid "Leer / nicht verfügbar"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:866
+msgid "Produktname nicht gespeichert"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:876
+msgid " + %d more"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:919
+msgid "Total"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:955
+msgid "Produktdetails werden im aktuellen Warenkorb-Modus nicht gespeichert."
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Admin.php:214
 msgid "%d Session"
 msgid_plural "%d Sessions"
 msgstr[0] ""
 msgstr[1] ""
 
+#: mh-user-activity-monitor/includes/Admin.php:825
 msgid "%d item"
 msgid_plural "%d items"
 msgstr[0] ""
 msgstr[1] ""
 
-msgid "Keinen"
+#: mh-user-activity-monitor/includes/Plugin.php:79
+msgid "Every five minutes"
 msgstr ""
 
-msgid "Keinen wendet keinen zusätzlichen Datenschutzmodus an und nutzt nur die einzelnen aktivierten Einstellungen. Standard speichert die aktivierten Details datensparsam ohne URL-Parameter. Datensparsam speichert Referrer nur als Domain, IPs nur als Hash, keine User-Agents und Warenkörbe nur als Anzahl. Streng speichert keine Referrer, keine User-Agents, keine Warenkorbdaten und deaktiviert den Frontend-Ping effektiv."
+#: mh-user-activity-monitor/includes/Settings.php:130
+msgid ""
+"Proxy-Header wurden nicht aktiviert, weil keine vertrauenswürdigen Proxy-IP-Adressen eingetragen wurden. Tragen Sie zuerst die IP-Adressen Ihres Reverse Proxys oder CDN ein und speichern Sie die Einstellung anschließend erneut."
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Settings.php:142
+msgid "Proxy-Header wurden nicht aktiviert, weil folgende Proxy-IP-Regeln ungültig sind: %s"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Tracker.php:145
+msgid "Besucher"
+msgstr ""
+
+#: mh-user-activity-monitor/includes/Tracker.php:463
+msgid "Unknown product"
 msgstr ""
