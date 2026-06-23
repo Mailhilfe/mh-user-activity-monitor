@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * MH User Activity Monitor
  *
@@ -47,6 +47,7 @@ final class Admin {
         add_action('admin_bar_menu', [$this, 'admin_bar_counter'], 100);
         add_action('admin_enqueue_scripts', [$this, 'assets']);
         add_action('admin_post_mhuam_clear_sessions', [$this, 'clear_sessions_action']);
+        add_action('admin_post_mhuam_export_sessions', [$this, 'export_sessions_action']);
         add_action('admin_post_mhuam_dismiss_notice', [$this, 'dismiss_notice_action']);
         add_action('wp_ajax_mhuam_admin_live', [$this, 'ajax_live']);
         add_action('admin_notices', [$this, 'security_notices']);
@@ -123,18 +124,20 @@ final class Admin {
     private function render_cards(): void {
         $stats = $this->db->get_stats();
         $cards = [
-            __('Online', 'mh-user-activity-monitor') => $stats['online'],
-            __('Bots online', 'mh-user-activity-monitor') => $stats['bots_online'],
-            __('Kunden online', 'mh-user-activity-monitor') => $stats['customers_online'],
+            __('Online', 'mh-user-activity-monitor') => ['value' => $stats['online'], 'class' => 'is-online'],
+            __('Bots online', 'mh-user-activity-monitor') => ['value' => $stats['bots_online'], 'class' => 'is-bot'],
+            __('Kunden online', 'mh-user-activity-monitor') => ['value' => $stats['customers_online'], 'class' => 'is-customer'],
         ];
         if ($this->has_woocommerce()) {
-            $cards[__('Warenkörbe', 'mh-user-activity-monitor')] = $stats['carts'];
+            $cards[__('Warenkörbe', 'mh-user-activity-monitor')] = ['value' => $stats['carts'], 'class' => 'is-cart'];
         }
-        $cards[__('Auffällige Muster', 'mh-user-activity-monitor')] = $stats['attack_flags'];
-        $cards[__('Sessions gesamt', 'mh-user-activity-monitor')] = $stats['total'];
+        $cards[__('Orange', 'mh-user-activity-monitor')] = ['value' => $stats['orange'], 'class' => 'is-orange'];
+        $cards[__('Rot', 'mh-user-activity-monitor')] = ['value' => $stats['red'], 'class' => 'is-red'];
+        $cards[__('Auffällige Muster', 'mh-user-activity-monitor')] = ['value' => $stats['attack_flags'], 'class' => 'is-flagged'];
+        $cards[__('Sessions gesamt', 'mh-user-activity-monitor')] = ['value' => $stats['total'], 'class' => 'is-total'];
         echo '<div class="mhuam-cards">';
-        foreach ($cards as $label => $value) {
-            echo '<div class="mhuam-card"><strong>' . esc_html((string)$value) . '</strong><span>' . esc_html($label) . '</span></div>';
+        foreach ($cards as $label => $card) {
+            echo '<div class="mhuam-card ' . esc_attr($card['class']) . '"><strong>' . esc_html((string)$card['value']) . '</strong><span>' . esc_html($label) . '</span></div>';
         }
         echo '</div>';
     }
@@ -142,7 +145,7 @@ final class Admin {
     private function render_filters(?string $filter = null): void {
         $filter = $filter ?? $this->query_arg('mhuam_filter', 'all', 'key');
         $base = admin_url('admin.php?page=mh-user-activity-monitor');
-        $filters = ['all' => __('Alle', 'mh-user-activity-monitor'), 'bots' => __('Nur Bots', 'mh-user-activity-monitor'), 'customers' => __('Nur Kunden', 'mh-user-activity-monitor')];
+        $filters = ['all' => __('Alle', 'mh-user-activity-monitor'), 'high_risk' => __('Auffällig', 'mh-user-activity-monitor'), 'bots' => __('Nur Bots', 'mh-user-activity-monitor'), 'customers' => __('Nur Kunden', 'mh-user-activity-monitor')];
         if ($this->has_woocommerce()) {
             $filters['cart'] = __('Nur Warenkorb', 'mh-user-activity-monitor');
         }
@@ -150,10 +153,12 @@ final class Admin {
             $filter = 'all';
         }
         echo '<div class="mhuam-toolbar">';
+        echo '<span class="mhuam-toolbar-label">' . esc_html__('Filter:', 'mh-user-activity-monitor') . '</span>';
         foreach ($filters as $key => $label) {
             $class = $filter === $key ? 'button button-primary' : 'button';
             echo '<a class="' . esc_attr($class) . '" href="' . esc_url(add_query_arg('mhuam_filter', $key, $base)) . '">' . esc_html($label) . '</a> ';
         }
+        echo '<a class="button" href="' . esc_url($this->export_url($filter)) . '">' . esc_html__('CSV exportieren', 'mh-user-activity-monitor') . '</a> ';
         if ($this->settings->can_manage()) {
             $clear = wp_nonce_url(admin_url('admin-post.php?action=mhuam_clear_sessions'), 'mhuam_clear_sessions');
             echo '<a class="button button-secondary" href="' . esc_url($clear) . '" onclick="return confirm(\'' . esc_js(__('Gespeicherte Sessions wirklich löschen?', 'mh-user-activity-monitor')) . '\')">' . esc_html__('Sessions löschen', 'mh-user-activity-monitor') . '</a>';
@@ -226,15 +231,15 @@ final class Admin {
         $flags = json_decode((string)$row['attack_flags_json'], true); $flags = is_array($flags) ? $flags : [];
         echo '<tr class="mhuam-risk-' . esc_attr($risk) . '">';
         echo '<td><a class="button button-small" href="' . esc_url($detail_url) . '">' . esc_html__('Details', 'mh-user-activity-monitor') . '</a></td>';
-        echo '<td><span class="mhuam-dot ' . ($online ? 'is-online' : 'is-offline') . '" aria-hidden="true"></span> ' . esc_html($online ? __('Online', 'mh-user-activity-monitor') : __('Offline', 'mh-user-activity-monitor')) . '</td>';
+        echo '<td><span class="mhuam-pill ' . ($online ? 'is-online' : 'is-offline') . '">' . esc_html($online ? __('Online', 'mh-user-activity-monitor') : __('Offline', 'mh-user-activity-monitor')) . '</span></td>';
         echo '<td><strong>' . esc_html($row['display_name'] ?: $row['visitor_type']) . '</strong><br><span>' . esc_html($row['visitor_type']) . '</span>';
         if (!empty($row['is_bot'])) { echo '<br><span class="mhuam-bot-label">BOT</span> ' . esc_html($this->format_bot_label($row)); }
         echo '</td>';
-        echo '<td>' . wp_kses_post($this->ipinfo_link($row['ip_display'])) . '</td>';
+        echo '<td>' . wp_kses_post($this->display_ip_value($row['ip_display'])) . '</td>';
         echo '<td><strong>' . esc_html($row['page_type']) . '</strong><br>' . wp_kses_post($this->url_link($row['current_url'])) . '</td>';
         echo '<td>' . esc_html((string)$row['hits']) . '</td>';
         echo '<td>' . wp_kses_post($this->format_time_short((string)$row['last_seen'], (int)$row['last_seen_ts'])) . '</td>';
-        echo '<td><span class="mhuam-signal mhuam-signal-' . esc_attr($risk) . '" aria-hidden="true"></span>' . (!empty($flags) ? '<br><small>' . esc_html(implode(', ', array_slice($flags, 0, 2))) . '</small>' : '') . '</td>';
+        echo '<td><span class="mhuam-pill mhuam-risk-pill mhuam-risk-pill-' . esc_attr($risk) . '">' . esc_html($this->format_risk_label($risk)) . '</span>' . (!empty($flags) ? '<br><small>' . esc_html(implode(', ', array_slice($flags, 0, 2))) . '</small>' : '') . '</td>';
         if ($this->has_woocommerce()) {
             echo '<td>' . wp_kses_post($this->cart_summary_cell($row['cart_json'] ?? '', (int)($row['cart_count'] ?? 0))) . '</td>';
         }
@@ -286,15 +291,29 @@ final class Admin {
         }
     }
 
+    private function format_risk_label(string $risk): string {
+        switch ($risk) {
+            case 'red':
+                return __('Rot', 'mh-user-activity-monitor');
+            case 'orange':
+                return __('Orange', 'mh-user-activity-monitor');
+            case 'yellow':
+                return __('Gelb', 'mh-user-activity-monitor');
+            default:
+                return __('Grün', 'mh-user-activity-monitor');
+        }
+    }
+
     private function render_detail(string $session_id): void {
         $row = $this->db->get_session($session_id);
         echo '<p><a class="button" href="' . esc_url(admin_url('admin.php?page=mh-user-activity-monitor')) . '">' . esc_html__('Zurück zur Übersicht', 'mh-user-activity-monitor') . '</a></p>';
         if (!$row) { echo '<div class="notice notice-error"><p>' . esc_html__('Session nicht gefunden.', 'mh-user-activity-monitor') . '</p></div>'; return; }
         echo '<h2>' . esc_html__('Detailansicht', 'mh-user-activity-monitor') . '</h2><div class="mhuam-detail-grid">';
+        $ip_label = __('IP-Adresse', 'mh-user-activity-monitor');
         $items = [
             __('Typ', 'mh-user-activity-monitor') => $row['visitor_type'],
             __('Name / Agent', 'mh-user-activity-monitor') => $row['display_name'],
-            __('IP-Adresse', 'mh-user-activity-monitor') => $row['ip_display'],
+            $ip_label => $row['ip_display'],
             __('Seitentyp', 'mh-user-activity-monitor') => $row['page_type'],
             __('Aktuelle Seite', 'mh-user-activity-monitor') => $row['current_url'],
             __('Herkunft', 'mh-user-activity-monitor') => $row['referrer'],
@@ -306,8 +325,8 @@ final class Admin {
         ];
         foreach ($items as $label => $value) {
             echo '<div><strong>' . esc_html($label) . '</strong><p>';
-            if ($label === __('IP-Adresse', 'mh-user-activity-monitor')) {
-                echo wp_kses_post($this->ipinfo_link($value));
+            if ($label === $ip_label) {
+                echo wp_kses_post($this->display_ip_value($value));
             } else {
                 echo esc_html((string)$value);
             }
@@ -338,6 +357,9 @@ final class Admin {
         echo '<tr><th>' . esc_html__('IP-Modus', 'mh-user-activity-monitor') . '</th><td><select name="' . esc_attr(Settings::OPTION) . '[ip_mode]">';
         foreach (['full' => __('Vollständig', 'mh-user-activity-monitor'), 'anonymized' => __('Anonymisiert', 'mh-user-activity-monitor'), 'hash' => __('Nur Hash', 'mh-user-activity-monitor')] as $k => $label) { echo '<option value="' . esc_attr($k) . '" ' . selected($s['ip_mode'], $k, false) . '>' . esc_html($label) . '</option>'; }
         echo '</select></td></tr>';
+        echo '<tr><th>' . esc_html__('IP-Adressen sichtbar für', 'mh-user-activity-monitor') . '</th><td><select name="' . esc_attr(Settings::OPTION) . '[show_ip_to]">';
+        foreach (['manage_options' => __('Nur Administratoren', 'mh-user-activity-monitor'), 'list_users' => __('Administratoren und Benutzerverwaltung', 'mh-user-activity-monitor')] as $k => $label) { echo '<option value="' . esc_attr($k) . '" ' . selected($s['show_ip_to'] ?? 'manage_options', $k, false) . '>' . esc_html($label) . '</option>'; }
+        echo '</select><p class="description">' . esc_html__('Legt fest, ob Rollen mit Benutzerlisten-Recht IP-Werte in Übersicht, Details und CSV-Export sehen dürfen.', 'mh-user-activity-monitor') . '</p></td></tr>';
         if ($this->has_woocommerce()) {
             echo '<tr><th>' . esc_html__('WooCommerce-Warenkorb-Modus', 'mh-user-activity-monitor') . '</th><td><select name="' . esc_attr(Settings::OPTION) . '[cart_mode]">';
             foreach (['count' => __('Nur Artikelanzahl', 'mh-user-activity-monitor'), 'summary' => __('Artikelanzahl und Summe', 'mh-user-activity-monitor'), 'details' => __('Produktdetails speichern', 'mh-user-activity-monitor')] as $k => $label) { echo '<option value="' . esc_attr($k) . '" ' . selected($s['cart_mode'] ?? 'summary', $k, false) . '>' . esc_html($label) . '</option>'; }
@@ -424,6 +446,36 @@ final class Admin {
         check_admin_referer('mhuam_clear_sessions');
         $this->db->clear();
         wp_safe_redirect(admin_url('admin.php?page=mh-user-activity-monitor&cleared=1'));
+        exit;
+    }
+
+    public function export_sessions_action(): void {
+        $this->require_can_view();
+        check_admin_referer('mhuam_export_sessions');
+
+        $filter = $this->query_arg('mhuam_filter', 'all', 'key');
+        if (!$this->has_woocommerce() && $filter === 'cart') {
+            $filter = 'all';
+        }
+        $orderby = $this->query_arg('orderby', 'last_seen_ts', 'key');
+        $order = strtoupper($this->query_arg('order', 'DESC', 'text')) === 'ASC' ? 'ASC' : 'DESC';
+        $limit = max(25, min(5000, (int)($this->settings->get()['max_sessions'] ?? 1000)));
+        $rows = $this->db->get_sessions($filter, $orderby, $order, $limit, 0);
+
+        nocache_headers();
+        status_header(200);
+        header('Content-Type: text/csv; charset=utf-8');
+        header('Content-Disposition: attachment; filename="mh-user-activity-monitor-sessions-' . gmdate('Ymd-His') . '.csv"');
+
+        $handle = fopen('php://output', 'w');
+        if ($handle !== false) {
+            fwrite($handle, "\xEF\xBB\xBF");
+            fputcsv($handle, $this->export_headers());
+            foreach ($rows as $row) {
+                fputcsv($handle, $this->export_row($row));
+            }
+            fclose($handle);
+        }
         exit;
     }
 
@@ -596,6 +648,109 @@ final class Admin {
 
     private function proxy_checkbox(bool $checked): void {
         echo '<tr><th>' . esc_html__('Proxy-Header für echte Besucher-IP vertrauen', 'mh-user-activity-monitor') . '</th><td><label><input type="checkbox" id="mhuam-trust-proxy" name="' . esc_attr(Settings::OPTION) . '[trust_proxy_headers]" value="1" ' . checked($checked, true, false) . ' data-confirm="' . esc_attr__('Aktivieren Sie diese Option nur, wenn die Website hinter einem vertrauenswürdigen Reverse Proxy oder CDN läuft und die erlaubten Proxy-IP-Adressen gepflegt sind. Sonst können Besucher IP-Adressen fälschen.', 'mh-user-activity-monitor') . '"> ' . esc_html__('Aktivieren', 'mh-user-activity-monitor') . '</label></td></tr>';
+    }
+
+    private function export_url(string $filter): string {
+        $orderby = $this->query_arg('orderby', 'last_seen_ts', 'key');
+        $order = strtoupper($this->query_arg('order', 'DESC', 'text')) === 'ASC' ? 'ASC' : 'DESC';
+        $url = add_query_arg(
+            [
+                'action' => 'mhuam_export_sessions',
+                'mhuam_filter' => $filter,
+                'orderby' => $orderby,
+                'order' => $order,
+            ],
+            admin_url('admin-post.php')
+        );
+
+        return wp_nonce_url($url, 'mhuam_export_sessions');
+    }
+
+    private function export_headers(): array {
+        $headers = [
+            __('Session-ID', 'mh-user-activity-monitor'),
+            __('Status', 'mh-user-activity-monitor'),
+            __('Besucher / Bot', 'mh-user-activity-monitor'),
+            __('Name / Agent', 'mh-user-activity-monitor'),
+            __('Benutzername', 'mh-user-activity-monitor'),
+            __('Rollen', 'mh-user-activity-monitor'),
+            __('IP-Adresse', 'mh-user-activity-monitor'),
+            __('Seitentyp', 'mh-user-activity-monitor'),
+            __('Aktuelle Seite', 'mh-user-activity-monitor'),
+            __('Herkunft', 'mh-user-activity-monitor'),
+            __('Aufrufe', 'mh-user-activity-monitor'),
+            __('Erste Aktivität', 'mh-user-activity-monitor'),
+            __('Letzte Aktivität', 'mh-user-activity-monitor'),
+            __('Ampel', 'mh-user-activity-monitor'),
+            __('Bot', 'mh-user-activity-monitor'),
+            __('Bot-Kategorie', 'mh-user-activity-monitor'),
+            __('Bot-Name', 'mh-user-activity-monitor'),
+            __('Sicherheitsmuster', 'mh-user-activity-monitor'),
+        ];
+        if ($this->has_woocommerce()) {
+            $headers[] = __('Warenkorb', 'mh-user-activity-monitor');
+        }
+        $headers[] = __('User-Agent', 'mh-user-activity-monitor');
+        return $headers;
+    }
+
+    private function export_row(array $row): array {
+        $s = $this->settings->get();
+        $online = (int)($row['last_seen_ts'] ?? 0) >= time() - (int)$s['online_seconds'];
+        $flags = json_decode((string)($row['attack_flags_json'] ?? ''), true);
+        $flags = is_array($flags) ? implode(', ', array_map([$this, 'scalar_to_string'], $flags)) : '';
+        $roles = json_decode((string)($row['roles'] ?? ''), true);
+        $roles = is_array($roles) ? implode(', ', array_map([$this, 'scalar_to_string'], $roles)) : '';
+
+        $out = [
+            $this->csv_cell($row['session_id'] ?? ''),
+            $this->csv_cell($online ? __('Online', 'mh-user-activity-monitor') : __('Offline', 'mh-user-activity-monitor')),
+            $this->csv_cell($row['visitor_type'] ?? ''),
+            $this->csv_cell($row['display_name'] ?? ''),
+            $this->csv_cell($row['user_login'] ?? ''),
+            $this->csv_cell($roles),
+            $this->csv_cell($this->settings->can_view_ip() ? ($row['ip_display'] ?? '') : $this->hidden_value()),
+            $this->csv_cell($row['page_type'] ?? ''),
+            $this->csv_cell($row['current_url'] ?? ''),
+            $this->csv_cell($row['referrer'] ?? ''),
+            $this->csv_cell($row['hits'] ?? ''),
+            $this->csv_cell($row['first_seen'] ?? ''),
+            $this->csv_cell($row['last_seen'] ?? ''),
+            $this->csv_cell($this->format_risk_label((string)($row['bot_risk'] ?? 'green'))),
+            $this->csv_cell(!empty($row['is_bot']) ? __('Ja', 'mh-user-activity-monitor') : __('Nein', 'mh-user-activity-monitor')),
+            $this->csv_cell($this->translate_bot_category((string)($row['bot_category'] ?? ''))),
+            $this->csv_cell($row['bot_name'] ?? ''),
+            $this->csv_cell($flags),
+        ];
+        if ($this->has_woocommerce()) {
+            $out[] = $this->csv_cell($this->plain_text($this->cart_visible_product_summary($row['cart_json'] ?? '', (int)($row['cart_count'] ?? 0))));
+        }
+        $out[] = $this->csv_cell($row['user_agent'] ?? '');
+        return $out;
+    }
+
+    private function csv_cell($value): string {
+        $value = $this->plain_text($this->scalar_to_string($value));
+        if ($value !== '' && preg_match('/^[=+\-@\t\r]/', $value)) {
+            $value = "'" . $value;
+        }
+        return $value;
+    }
+
+    private function display_ip_value($ip_display): string {
+        if (!$this->settings->can_view_ip()) {
+            return esc_html($this->hidden_value());
+        }
+        return $this->ipinfo_link($ip_display);
+    }
+
+    private function hidden_value(): string {
+        return __('Ausgeblendet', 'mh-user-activity-monitor');
+    }
+
+    private function plain_text($value): string {
+        $charset = function_exists('get_bloginfo') ? get_bloginfo('charset') : 'UTF-8';
+        return html_entity_decode(wp_strip_all_tags((string)$value), ENT_QUOTES, $charset ?: 'UTF-8');
     }
 
     private function input_number(string $key, string $label, $value): void { echo '<tr><th><label>' . esc_html($label) . '</label></th><td><input type="number" name="' . esc_attr(Settings::OPTION) . '[' . esc_attr($key) . ']" value="' . esc_attr((string)$value) . '" class="small-text"></td></tr>'; }

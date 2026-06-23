@@ -33,6 +33,7 @@ final class Plugin {
 
     public function init(): void {
         DB::maybe_upgrade();
+        load_plugin_textdomain('mh-user-activity-monitor', false, dirname(MHUAM_BASENAME) . '/languages');
         self::cleanup_legacy_cron_hooks();
         $this->settings->init();
         $this->tracker->init();

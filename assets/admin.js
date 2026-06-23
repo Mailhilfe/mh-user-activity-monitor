@@ -9,6 +9,7 @@
     if (!tableWrap.length || !window.MHUAM_ADMIN) return;
     if (document.hidden) return;
     var params = new URLSearchParams(window.location.search);
+    tableWrap.addClass('is-refreshing');
     $.post(MHUAM_ADMIN.ajaxUrl, {
       action: 'mhuam_admin_live',
       nonce: MHUAM_ADMIN.nonce,
@@ -18,6 +19,7 @@
       paged: params.get('paged') || '1'
     }).done(function (response) {
       if (response && response.success && response.data) {
+        tableWrap.removeClass('has-refresh-error');
         if (response.data.cards && cardsWrap.length) {
           cardsWrap.html(response.data.cards);
         }
@@ -25,6 +27,10 @@
           tableWrap.html(response.data.table);
         }
       }
+    }).fail(function () {
+      tableWrap.addClass('has-refresh-error');
+    }).always(function () {
+      tableWrap.removeClass('is-refreshing');
     });
   }
   $(function () {

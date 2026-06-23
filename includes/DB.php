@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) { exit; }
 
 final class DB {
     public const DB_VERSION_OPTION = 'mhuam_db_version';
-    public const DB_VERSION = '1.67';
+    public const DB_VERSION = '1.69';
     private const STATS_CACHE_KEY = 'mhuam_stats_cache';
     private Settings $settings;
 
@@ -221,7 +221,7 @@ final class DB {
         $allowed = ['last_seen_ts','visitor_type','display_name','ip_display','page_type','hits','is_bot','bot_risk','cart_count'];
         $orderby = in_array($orderby, $allowed, true) ? $orderby : 'last_seen_ts';
         $order = strtoupper($order) === 'ASC' ? 'ASC' : 'DESC';
-        $limit = max(1, min(1000, $limit));
+        $limit = max(1, min(5000, $limit));
         $offset = max(0, $offset);
 
         if ($filter === 'bots') {
@@ -248,6 +248,14 @@ final class DB {
             } else {
                 // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- Runtime visitor table is intentionally queried for the admin live view.
                 $rows = $wpdb->get_results($wpdb->prepare('SELECT * FROM %i WHERE cart_count > %d ORDER BY %i DESC LIMIT %d OFFSET %d', self::table(), 0, $orderby, $limit, $offset), ARRAY_A);
+            }
+        } elseif ($filter === 'high_risk') {
+            if ($order === 'ASC') {
+                // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- Runtime visitor table is intentionally queried for the admin live view.
+                $rows = $wpdb->get_results($wpdb->prepare("SELECT * FROM %i WHERE bot_risk IN ('orange','red') OR (attack_flags_json IS NOT NULL AND attack_flags_json != '' AND attack_flags_json != '[]') ORDER BY %i ASC LIMIT %d OFFSET %d", self::table(), $orderby, $limit, $offset), ARRAY_A);
+            } else {
+                // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- Runtime visitor table is intentionally queried for the admin live view.
+                $rows = $wpdb->get_results($wpdb->prepare("SELECT * FROM %i WHERE bot_risk IN ('orange','red') OR (attack_flags_json IS NOT NULL AND attack_flags_json != '' AND attack_flags_json != '[]') ORDER BY %i DESC LIMIT %d OFFSET %d", self::table(), $orderby, $limit, $offset), ARRAY_A);
             }
         } else {
             if ($order === 'ASC') {
@@ -277,6 +285,11 @@ final class DB {
         if ($filter === 'cart') {
             // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- Count is used for admin pagination and contains no visitor-controlled SQL identifiers.
             return (int)$wpdb->get_var($wpdb->prepare('SELECT COUNT(*) FROM %i WHERE cart_count > %d', self::table(), 0));
+        }
+
+        if ($filter === 'high_risk') {
+            // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- Count is used for admin pagination and contains no visitor-controlled SQL identifiers.
+            return (int)$wpdb->get_var($wpdb->prepare("SELECT COUNT(*) FROM %i WHERE bot_risk IN ('orange','red') OR (attack_flags_json IS NOT NULL AND attack_flags_json != '' AND attack_flags_json != '[]')", self::table()));
         }
 
         // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- Count is used for admin pagination and contains no visitor-controlled SQL identifiers.

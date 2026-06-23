@@ -110,6 +110,7 @@ final class Tracker {
 
         $ip = $this->resolve_ip();
         if ($this->is_ignored_ip($ip)) { return; }
+        if (!empty($s['hide_own_ip']) && $this->is_current_manager_ip($ip)) { return; }
 
         $user = wp_get_current_user();
         if (!empty($s['hide_admins']) && $user && $user->ID && in_array('administrator', (array)$user->roles, true)) { return; }
@@ -265,6 +266,13 @@ final class Tracker {
             if (Settings::ip_rule_match($pattern, $ip)) { return true; }
         }
         return false;
+    }
+
+    private function is_current_manager_ip(string $ip): bool {
+        if (!is_user_logged_in() || !$this->settings->can_manage()) {
+            return false;
+        }
+        return filter_var($ip, FILTER_VALIDATE_IP) !== false;
     }
 
     private function is_ignored_url(string $url): bool {
@@ -521,8 +529,8 @@ final class Tracker {
 
     private function privacy_mode(): string {
         $settings = $this->settings->get();
-        $mode = $this->scalar_to_string($settings['privacy_mode'] ?? 'standard');
-        return in_array($mode, ['standard','data_saving','strict'], true) ? $mode : 'standard';
+        $mode = $this->scalar_to_string($settings['privacy_mode'] ?? 'none');
+        return in_array($mode, ['none','standard','data_saving','strict'], true) ? $mode : 'standard';
     }
 
     private function effective_ip_mode(): string {
@@ -540,7 +548,7 @@ final class Tracker {
     }
 
     private function effective_track_user_agent(): bool {
-        if ($this->privacy_mode() !== 'standard') { return false; }
+        if (in_array($this->privacy_mode(), ['data_saving','strict'], true)) { return false; }
         return !empty($this->settings->get()['track_user_agent']);
     }
 

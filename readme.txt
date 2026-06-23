@@ -1,10 +1,10 @@
 === MH User Activity Monitor ===
-Contributors: schaum, mailhilfe
+Contributors: schaum
 Tags: users, activity, woocommerce, bots, monitoring
 Requires at least: 6.2
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.67
+Stable tag: 1.71
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,8 @@ MH User Activity Monitor shows in real time which users, visitors, WooCommerce c
 MH User Activity Monitor displays active sessions directly in the WordPress admin area. Administrators can see which visitors are currently online, whether logged-in users are active, which page types are being viewed and when the last activity occurred.
 
 The overview uses dashboard cards, filters, sorting and live refresh. This makes it easier to distinguish normal visitor activity from unusual access patterns.
+
+Administrators can also export the currently filtered session overview as a CSV file for short-term support or security review workflows.
 
 = Keep an eye on WooCommerce carts =
 
@@ -119,6 +121,26 @@ The plugin provides privacy-friendly settings. The legal assessment depends on t
 4. Privacy settings with IP anonymization, retention time and data-saving mode.
 
 == Changelog ==
+
+= 1.71 =
+* Added a CSV export for the currently filtered session overview.
+* Fixed the None privacy mode so URL query parameters are only retained when that mode is selected.
+* Enforced the IP visibility setting in the overview, detail view and CSV export, and added the missing settings control.
+* Loaded bundled translation files explicitly from the plugin languages directory.
+* Added localized readme files for every bundled language.
+
+= 1.70 =
+* Fixed the inactive "hide own IP" setting so administrator frontend visits can be excluded when enabled.
+* Improved the admin overview with clearer risk cards, status/risk badges and an "Auffaellig" filter.
+* Expanded bot and crawler detection rules, including additional AI, search, SEO, social preview, monitoring and scanner user agents.
+* Added more suspicious request patterns for REST user enumeration, path traversal and remote file inclusion attempts.
+
+= 1.69 =
+* Release cleanup: Removed the .wordpress-org development/assets folder from the production plugin package.
+* Confirmed the Contributors field contains only the valid WordPress.org username schaum.
+
+= 1.68 =
+* Fixed the WordPress.org contributors field by removing an invalid username.
 
 = 1.67 =
 * Linked visible IP addresses in the admin table and session detail view to ipinfo.io for easier lookup.

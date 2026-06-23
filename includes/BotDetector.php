@@ -20,20 +20,27 @@ final class BotDetector {
             'KI-Assistent / Live-Abruf' => [
                 'chatgpt-user',
                 'claude-user',
+                'claude-searchbot',
                 'perplexity-user',
                 'mistralai-user',
+                'copilotbot',
             ],
             'KI-Suchmaschine' => [
                 'oai-searchbot',
+                'searchgpt',
+                'chatgpt-search',
                 'perplexitybot',
+                'perplexity-ai',
                 'youbot',
+                'youbot/',
                 'applebot-extended',
+                'google-extended',
             ],
             'KI-Training / Datensammlung' => [
                 'gptbot',
+                'oai-adsbot',
                 'claudebot',
                 'anthropic-ai',
-                'google-extended',
                 'meta-externalagent',
                 'meta-externalfetcher',
                 'amazonbot',
@@ -41,6 +48,9 @@ final class BotDetector {
                 'bytespider',
                 'cohere-ai',
                 'diffbot',
+                'img2dataset',
+                'omgilibot',
+                'omgili',
             ],
             'KI-Crawler' => [
                 'openai',
@@ -49,18 +59,31 @@ final class BotDetector {
                 'perplexity',
                 'cohere',
                 'mistral',
+                'ai2bot',
+                'ai2bot-dolma',
             ],
-            'Suchmaschine' => ['googlebot','bingbot','duckduckbot','yandexbot','baiduspider','applebot','qwantbot'],
-            'SEO-Tool' => ['ahrefsbot','semrushbot','sistrix','seobility','mj12bot','dotbot','siteauditbot'],
-            'Social Preview' => ['facebookexternalhit','twitterbot','linkedinbot','slackbot','discordbot','telegrambot','whatsapp'],
-            'Monitoring' => ['uptimerobot','pingdom','statuscake','better uptime','newrelic'],
-            'Scanner' => ['censys','shodan','nikto','acunetix','sqlmap','nuclei','nessus','masscan','zgrab','curl','python-requests','go-http-client','wget'],
+            'Suchmaschine' => ['googlebot','googleother','google-inspectiontool','bingbot','bingpreview','duckduckbot','yandexbot','baiduspider','applebot','qwantbot','petalbot','seznambot','sogou','exabot','ia_archiver'],
+            'SEO-Tool' => ['ahrefsbot','semrushbot','sistrix','seobility','mj12bot','dotbot','siteauditbot','rogerbot','blexbot','serpstatbot','megaindex'],
+            'Social Preview' => ['facebookexternalhit','facebookcatalog','twitterbot','linkedinbot','pinterestbot','slackbot','discordbot','telegrambot','whatsapp','skypeuripreview','vkshare'],
+            'Monitoring' => ['uptimerobot','pingdom','statuscake','better uptime','betterstack','newrelic','datadog','site24x7','freshping','healthchecks'],
+            'Scanner' => ['censys','shodan','nikto','acunetix','sqlmap','nuclei','nessus','masscan','zgrab','curl','python-requests','go-http-client','wget','libwww-perl','java/','headlesschrome'],
         ];
+        /**
+         * Filters the bot detection rules.
+         *
+         * @param array<string,array<int,string>> $rules Rules grouped by category label.
+         */
+        $rules = apply_filters('mhuam_bot_detection_rules', $rules);
+        $rules = is_array($rules) ? $rules : [];
         $is_bot = false; $category = ''; $name = '';
         foreach ($rules as $cat => $needles) {
+            if (!is_array($needles)) {
+                continue;
+            }
             foreach ($needles as $needle) {
+                $needle = is_scalar($needle) ? (string)$needle : '';
                 if ($needle !== '' && strpos($ua, $needle) !== false) {
-                    $is_bot = true; $category = $cat; $name = $needle; break 2;
+                    $is_bot = true; $category = is_scalar($cat) ? (string)$cat : 'Bot/Crawler'; $name = $needle; break 2;
                 }
             }
         }
@@ -93,8 +116,11 @@ final class BotDetector {
             'Datenbank-Tool' => ['phpmyadmin','adminer.php','mysqladmin'],
             'Backup- oder Dump-Datei' => ['.sql','.bak','.zip','.tar.gz','.old'],
             'Plugin-/Theme-Scan' => ['/wp-content/plugins/','/wp-content/themes/'],
+            'REST-API-Benutzerabfrage' => ['/wp-json/wp/v2/users', 'rest_route=/wp/v2/users'],
+            'Pfad-Traversal-Muster' => ['../', '..\\', '%2e%2e%2f', '%252e%252e%252f'],
+            'Remote-File-Inclusion-Muster' => ['=http://', '=https://', '://pastebin.com/', '://raw.githubusercontent.com/'],
             'Script-Injection-Muster' => ['<script','%3cscript','javascript:','onerror=','onload='],
-            'SQL-Injection-Muster' => [' union select ',' concat(','information_schema','sleep(','benchmark(',' or 1=1'],
+            'SQL-Injection-Muster' => [' union select ',' concat(','information_schema','sleep(','benchmark(',' or 1=1', "' or '1'='1", '" or "1"="1'],
             'Log4Shell-Muster' => ['${jndi:', 'jndi:ldap', 'jndi:rmi', 'jndi:dns'],
             'PHP-Wrapper-Muster' => ['php://', 'data://', 'phar://', 'zip://', 'expect://', 'input://'],
             'Sehr kurzer oder leerer User-Agent' => [],
@@ -105,14 +131,19 @@ final class BotDetector {
          * @param array<string,array<int,string>> $checks Musterliste nach Anzeigename.
          */
         $checks = apply_filters('mhuam_attack_checks', $checks);
+        $checks = is_array($checks) ? $checks : [];
         $flags = [];
         foreach ($checks as $label => $needles) {
             if ($label === 'Sehr kurzer oder leerer User-Agent') {
                 if (strlen(trim($user_agent)) < 8) { $flags[] = $label; }
                 continue;
             }
+            if (!is_array($needles)) {
+                continue;
+            }
             foreach ($needles as $needle) {
-                if (strpos($s, $needle) !== false) { $flags[] = $label; break; }
+                $needle = is_scalar($needle) ? (string)$needle : '';
+                if ($needle !== '' && strpos($s, $needle) !== false) { $flags[] = $label; break; }
             }
         }
         return array_values(array_unique($flags));
